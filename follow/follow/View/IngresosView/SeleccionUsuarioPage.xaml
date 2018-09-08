@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="follow.View.IngresosView.SeleccionUsuarioPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator }}"
+             Title="Seleccion tipo usuario" >
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding TipoUsuario}">
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="StartAndExpand">             
+                
+                <Image Source="logo.png"
+                       WidthRequest="150">
+                </Image>
+
+            </StackLayout>
+            
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Label Text=" "></Label>                    
+            </StackLayout>  
+            
+         <StackLayout
+             Orientation="Horizontal"
+             VerticalOptions="CenterAndExpand"
+             HorizontalOptions="CenterAndExpand">
+             
+                <StackLayout >
+
+                    <Image
+                    x:Name="Tablero"
+                    Source="Tablero.png"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="80">
+                    </Image>
+                <Label
+                    Text="Educador"
+                    HorizontalOptions="StartAndExpand"
+                    Margin="20">
+
+                </Label>
+            </StackLayout>
+                <StackLayout>
+
+
+                    <Image
+                    x:Name="Lapiz"
+                    Source="Pencil.png"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="70">
+                </Image>
+                <Label
+                    Text="Estudiante"
+                    HorizontalOptions="CenterAndExpand"
+                      Margin="20">
+
+                </Label>
+                
+            </StackLayout>
+
+
+            <StackLayout>
+                <Image
+                    x:Name="Casa"
+                    Source="home.png"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="96">
+                </Image>
+                <Label
+                    Text="Tutor"
+                    HorizontalOptions="CenterAndExpand"
+                      Margin="20">
+                </Label>             
+                
+            </StackLayout>
+         </StackLayout>
+            
+
+
+
+
+            <Label
+                Text="Selecciona tu tipo de usuario"
+                 VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center">              
+
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

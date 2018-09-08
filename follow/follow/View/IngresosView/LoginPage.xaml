@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="follow.View.LoginPage" 
+             BindingContext="{Binding Main, Source={StaticResource Locator }}"
+             Title="Follow">
+            
+    
+    
+    <ContentPage.Content>
+        
+       <StackLayout Padding="20"  BindingContext="{Binding Login}">
+           
+            <Image
+                Source="logo"
+                VerticalOptions="CenterAndExpand" >
+            </Image>    
+
+            <Entry  
+                   Placeholder="Tu E-mail"
+                   Keyboard="Email"
+                   Text="{Binding Email,Mode=TwoWay}">
+            </Entry>
+           
+            <Entry  
+                   Placeholder="Contraseña"
+                   IsPassword="True"
+                   Text="{Binding Contraseña,Mode=TwoWay}">
+            </Entry>    
+                
+        <StackLayout Orientation="Horizontal">
+            
+                <Label Text="Recordarme:"
+                       VerticalOptions="Center">
+                </Label>
+            
+                <Switch
+                     IsToggled="{Binding IsRemember, Mode=TwoWay}">
+                 </Switch>
+        </StackLayout>
+            
+            <ActivityIndicator
+                VerticalOptions="CenterAndExpand"
+                IsRunning="{Binding IsRunning, Mode=TwoWay}">                
+            </ActivityIndicator>
+
+        <StackLayout
+            VerticalOptions="CenterAndExpand"
+                Margin="20,30">
+            
+            <Button Text="Entrar"
+                    Command="{Binding IsEntrar}"
+                    BackgroundColor="#31D022"
+                    BorderRadius="20">
+            </Button>
+
+            <Label   Text="or"
+                 HorizontalOptions="CenterAndExpand" >
+            </Label>
+
+            <Button Text="Registrar"
+                    Command="{Binding IsRegistrar}"
+                    BackgroundColor="#31D022"
+                    BorderRadius="20">                    
+             </Button>
+                
+             <StackLayout Orientation="Horizontal"
+                          HorizontalOptions="Center"
+                          VerticalOptions="EndAndExpand">
+                 
+                   <Image Source="facebook_logo"
+                          WidthRequest="50"/>
+             </StackLayout>
+         </StackLayout>
+
+              
+       </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

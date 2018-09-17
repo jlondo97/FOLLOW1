@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="follow.View.TutoresView.AgregarHijo"
+              BindingContext="{Binding Main, Source={StaticResource Locator }}"
+             Title="Seleccion de Hijo" >
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <Image
+                Source="logo.png"
+                WidthRequest="150"
+                HorizontalOptions="StartAndExpand"> 
+                
+            </Image>
+            <StackLayout>
+                <Label
+                Text="Hoy que proceso deseas seguir?"
+                 Margin="10,50"    ></Label>
+            </StackLayout>
+            <ScrollView>
+                <Label Text="1"></Label>
+                <Label Text="1"></Label>
+
+            </ScrollView>
+            
+
+            <StackLayout
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="EndAndExpand"
+                Margin="10">
+                
+                <Image Source="Plus.png"></Image>
+                <Label Text="Agregar"
+                       Margin="10"></Label>
+            </StackLayout>
+            
+        
+        </StackLayout>
+       
+
+
+
+    </ContentPage.Content>
+</ContentPage>

@@ -33,7 +33,7 @@ using Xamarin.Forms.Xaml;
 
             var TapCasa = new TapGestureRecognizer();
             TapCasa.Tapped += tapCasa_Tapped;
-            Casa.GestureRecognizers.Add(TapCasa);
+            Casa.GestureRecognizers.Add(TapCasa); 
 
             #region eventos
 
@@ -48,10 +48,11 @@ using Xamarin.Forms.Xaml;
                 Application.Current.MainPage.Navigation.PushAsync(new MateriasEstudiantesPage());
             }
 
-            void tapCasa_Tapped(object sender, EventArgs args)
-            {
-                Application.Current.MainPage.Navigation.PushAsync(new SeleccionDeEsclavo());
+           void tapCasa_Tapped(object sender, EventArgs args)
+           {
+            Application.Current.MainPage.Navigation.PushAsync(new AgregarHijo());
             }
+
             #endregion
         }
     }

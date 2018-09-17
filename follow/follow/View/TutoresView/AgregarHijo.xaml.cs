@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace follow.View.TutoresView
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SeleccionDeEsclavo : ContentPage
+	public partial class AgregarHijo : ContentPage
 	{
-		public SeleccionDeEsclavo ()
+		public AgregarHijo ()
 		{
 			InitializeComponent ();
 		}

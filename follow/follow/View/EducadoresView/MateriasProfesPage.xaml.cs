@@ -7,8 +7,6 @@ using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Collections;
-using System.IO;
 
 namespace follow.View.EducadoresView
 {
@@ -39,32 +37,37 @@ namespace follow.View.EducadoresView
         {
             overlay.IsVisible = false;
 
-            if (string.IsNullOrEmpty(this.EnteredName.Text))
-            {
-                DisplayAlert("Error", "No pusiste un nombre :( ", "oky");
+            if(string.IsNullOrEmpty(this.EnteredName.Text))
+             {
+            DisplayAlert("Error", "No pusiste un nombre :( ", "oky");
 
             }
 
-            else
+           else
             {
-                DisplayAlert("Nuevo Curso Agregado", "Tu curso " + EnteredName.Text + " fue agregado con exito", "oky");
+            DisplayAlert("Nuevo Curso Agregado", "Tu curso "+ EnteredName.Text+" fue agregado con exito", "oky");
 
-                materia.Add(new Materia { Nombre = EnteredName.Text });
+                materia.Add(new Materia{ Nombre = EnteredName.Text });
 
-                ArrayList nombreMateria = new ArrayList();
-                nombreMateria.Add(EnteredName.Text);
-            }
+                
+
+                            }   
+
 
         }
 
+        void OnCancelButtonClicked(object sender, EventArgs args)
+        {
+            overlay.IsVisible = false;
+        }
 
+        private void ListaMaterias_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem ==null) { return; }
 
-
-
-            void OnCancelButtonClicked(object sender, EventArgs args)
-            {
-                overlay.IsVisible = false;
-            }
-
-        } 
-     }    
+            contact data = e.SelectedItem as contact;
+            Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos());
+            //  DisplayAlert("Materia", "seleccionada ;) ", "oky");
+        }
+    }
+}

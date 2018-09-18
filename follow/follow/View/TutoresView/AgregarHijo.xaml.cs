@@ -17,26 +17,24 @@ namespace follow.View.TutoresView
 
 
         #region contructor
-        private List<Estudiante> estudiantes;
+        ObservableCollection<Estudiante> estudiantes = new ObservableCollection<Estudiante>();
 
         public AgregarHijo()
         {
             InitializeComponent();
-            this.loadEstudiante();
-      
+            ListaHijos.ItemsSource = estudiantes;
             var TapPlus = new TapGestureRecognizer();
             TapPlus.Tapped += TapPlus_Tapped;
-            Plus.GestureRecognizers.Add(TapPlus);
+            Plus.GestureRecognizers.Add(TapPlus);       
+
+
+
+
 
 
         }
 
-        private async void loadEstudiante()
-        {
-            String nombre = EnteredName.Text;
-            String id = Identificacion.Text;
-            
-        }
+        
         #endregion
 
         #region Botones
@@ -53,11 +51,25 @@ namespace follow.View.TutoresView
 
         }
 
+       
+
         void OnOKButtonClicked(object sender, System.EventArgs args)
         {
             overlay.IsVisible = false;
-            DisplayAlert("Nuevo Estudiante Agregado", EnteredName.Text, "oky");
-           
+            if (string.IsNullOrEmpty(this.EnteredName.Text) || string.IsNullOrEmpty(this.Identificacion.Text))
+            {
+                DisplayAlert("Error", "Debes Agregar Estudiante o Identificacion", "oky");
+
+            }
+
+            else
+            {
+                DisplayAlert("Nuevo Estudiante Agregado", EnteredName.Text, "oky");
+
+                estudiantes.Add(new Estudiante { Nombre = EnteredName.Text, Id = Identificacion.Text });
+            }   
+
+
         }
  
         void OnCancelButtonClicked(object sender, EventArgs args)

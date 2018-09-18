@@ -4,11 +4,105 @@
              x:Class="follow.View.EducadoresView.MateriasProfesPage"
               BindingContext="{Binding Main, Source={StaticResource Locator }}"
              Title="Materia " >
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <AbsoluteLayout>
+        <!-- Normal Page Content -->
+        <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All">
+            <!-- Normal Page Content -->
+            <Image
+                Source="logo.png"
+                WidthRequest="150"
+                HorizontalOptions="StartAndExpand">
+
+            </Image>
+            <StackLayout>
+                <Label
+                Text="Agrega Nuevos cursos a tu abanico de cursos "
+                 Margin="10,50"    ></Label>
+            </StackLayout>
+
+
+
+            <StackLayout>
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <ListView x:Name="ListaMaterias"  ItemsSource="{Binding}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Nombre}" />
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+
+
+
+
+            <StackLayout
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="EndAndExpand"
+                Margin="10">
+
+                <Image Source="Plus.png"
+                       x:Name="Plus"></Image>
+                <Label Text="Agregar"
+                       Margin="10"></Label>
+            </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+        <ContentView x:Name="overlay"
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All"
+               IsVisible="False"
+               BackgroundColor="#C0808080"
+               Padding="10, 0">
+
+            <!-- Overlay -->
+            <StackLayout Orientation="Vertical"
+             BackgroundColor="White"
+             HeightRequest="200"
+             WidthRequest="300"
+             HorizontalOptions="Center"
+             VerticalOptions="Start"
+             Margin="0,50,0,0" >
+
+                <Label BackgroundColor="#31D022"
+         FontSize="18"
+         TextColor="White"
+         HorizontalOptions="Fill"
+         Text="Ingresar Codigo " />
+
+                <Entry x:Name="EnteredName"
+         Placeholder=" Curso"
+         VerticalOptions="CenterAndExpand"
+         HorizontalOptions="Center"
+         WidthRequest="250" />
+
+
+                <StackLayout Orientation="Horizontal"
+               HorizontalOptions="Center">
+
+                    <Button Text="Cancelar" FontSize="Medium" 
+                            BorderRadius="50"
+                            BackgroundColor="#31D022"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnCancelButtonClicked"
+                            Margin="20"/>
+
+                    <Button Text="Agregar" FontSize="Medium"
+                            BorderRadius="50"
+                            BackgroundColor="#31D022"
+                  VerticalOptions="CenterAndExpand"
+                  HorizontalOptions="Center"
+                  Clicked="OnOKButtonClicked"
+                   Margin="20"/>
+                </StackLayout>
+
+            </StackLayout>
+
+        </ContentView>
+    </AbsoluteLayout>
+
+
 </ContentPage>

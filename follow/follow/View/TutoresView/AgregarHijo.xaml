@@ -28,14 +28,11 @@
                 <ScrollView VerticalOptions="FillAndExpand">
                     <ListView x:Name="ListaHijos"  ItemsSource="{Binding}">
                         <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <Label FontAttributes="Bold"
-                                           x:Name="holaMundo"
-                                           FontSize="Medium"
-                                           Text="{Binding Name}"
-                                           TextColor="Black"></Label>
-                                </ViewCell>
+                            <DataTemplate>                              
+                                    <TextCell Text="{Binding Nombre}" />                                 
+                                    
+
+                               
                             </DataTemplate>
                         </ListView.ItemTemplate>                    
                     </ListView>

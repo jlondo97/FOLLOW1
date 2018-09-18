@@ -8,73 +8,79 @@
     
     
     <ContentPage.Content>
-        
-       <StackLayout Padding="20"  BindingContext="{Binding Login}">
-           
+        <ScrollView>
+        <StackLayout Padding="20"  BindingContext="{Binding Login}">
+
             <Image
                 Source="logo"
                 VerticalOptions="CenterAndExpand" >
-            </Image>    
+            </Image>
 
-            <Entry  
+            <StackLayout>
+             
+                <Entry  
                    Placeholder="Tu E-mail"
                    Keyboard="Email"
                    Text="{Binding Email,Mode=TwoWay}">
-            </Entry>
-           
-            <Entry  
+                </Entry>
+
+                <Entry  
                    Placeholder="Contraseña"
                    IsPassword="True"
                    Text="{Binding Contraseña,Mode=TwoWay}">
-            </Entry>    
-                
-        <StackLayout Orientation="Horizontal">
-            
-                <Label Text="Recordarme:"
-                       VerticalOptions="Center">
-                </Label>
-            
-                <Switch
-                     IsToggled="{Binding IsRemember, Mode=TwoWay}">
-                 </Switch>
-        </StackLayout>
-            
-            <ActivityIndicator
-                VerticalOptions="CenterAndExpand"
-                IsRunning="{Binding IsRunning, Mode=TwoWay}">                
-            </ActivityIndicator>
+                </Entry>
 
-        <StackLayout
-            VerticalOptions="CenterAndExpand"
-                Margin="20,30">
-            
-            <Button Text="Entrar"
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Recordarme:"
+                       VerticalOptions="Center">
+                    </Label>
+
+                    <Switch
+                     IsToggled="{Binding IsRemember, Mode=TwoWay}">
+                    </Switch>
+                </StackLayout>
+
+                <ActivityIndicator
+                VerticalOptions="CenterAndExpand"
+                IsRunning="{Binding IsRunning, Mode=TwoWay}">
+                </ActivityIndicator>
+
+                <StackLayout
+                    VerticalOptions="CenterAndExpand"
+                    Margin="20,30">
+
+                    <Button Text="Entrar"
                     Command="{Binding IsEntrar}"
                     BackgroundColor="#31D022"
                     BorderRadius="20">
-            </Button>
+                    </Button>
 
-            <Label   Text="or"
-                 HorizontalOptions="CenterAndExpand" >
-            </Label>
+                    <Label   Text="or"
+                    HorizontalOptions="CenterAndExpand" >
+                    </Label>
 
-            <Button Text="Registrar"
+                    <Button Text="Registrar"
                     Command="{Binding IsRegistrar}"
                     BackgroundColor="#31D022"
-                    BorderRadius="20">                    
-             </Button>
-                
-             <StackLayout Orientation="Horizontal"
+                    BorderRadius="20">
+                    </Button>
+
+                    <StackLayout Orientation="Horizontal"
                           HorizontalOptions="Center"
                           VerticalOptions="EndAndExpand">
-                 
-                   <Image Source="facebook_logo"
-                          WidthRequest="50"/>
-             </StackLayout>
-         </StackLayout>
 
+                        <Image Source="facebook_logo"
+                          WidthRequest="50"/>
+                    </StackLayout>
+
+
+                </StackLayout>
               
-       </StackLayout>
-       
+            </StackLayout>
+         
+
+        </StackLayout>
+        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>

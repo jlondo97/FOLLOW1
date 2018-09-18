@@ -14,7 +14,6 @@
     <Compile Remove="View\LoginPage - Copia.xaml.cs" />
     <Compile Remove="View\Page1.xaml.cs" />
     <Compile Remove="View\TipoUsuarios.xaml.cs" />
-    <Compile Remove="View\TutoresView\Page1.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,11 +21,11 @@
     <EmbeddedResource Remove="View\LoginPage - Copia.xaml" />
     <EmbeddedResource Remove="View\Page1.xaml" />
     <EmbeddedResource Remove="View\TipoUsuarios.xaml" />
-    <EmbeddedResource Remove="View\TutoresView\Page1.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MvvmLightLibs" Version="5.4.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.168" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
 

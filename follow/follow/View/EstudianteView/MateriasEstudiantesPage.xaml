@@ -12,8 +12,8 @@
         <!-- Normal Page Content -->
         <Image
                 Source="logo.png"
-                WidthRequest="150"
-                HorizontalOptions="StartAndExpand">
+                VerticalOptions="Center" 
+                HeightRequest="50">
 
         </Image>
         <StackLayout>

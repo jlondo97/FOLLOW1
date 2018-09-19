@@ -11,10 +11,9 @@
             <!-- Normal Page Content -->
             <Image
                 Source="logo.png"
-                WidthRequest="150"
-                HorizontalOptions="StartAndExpand">
-
-            </Image>
+                VerticalOptions="Center" 
+                HeightRequest="50"
+>            </Image>
             <StackLayout>
                 <Label
                 Text="Agrega Nuevos cursos a tu abanico de cursos "
@@ -25,7 +24,7 @@
 
             <StackLayout>
                 <ScrollView VerticalOptions="FillAndExpand">
-                    <ListView x:Name="ListaMaterias"  ItemsSource="{Binding}" ItemSelected="ListaMaterias_ItemSelected">
+                    <ListView x:Name="ListaMaterias"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" ItemSelected="ListaMaterias_ItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextCell Text="{Binding Nombre}" />

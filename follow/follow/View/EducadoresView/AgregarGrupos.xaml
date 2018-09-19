@@ -4,15 +4,16 @@
              x:Class="follow.View.EducadoresView.AgregarGrupos">
     <AbsoluteLayout>
         <!-- Normal Page Content -->
-        <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-               AbsoluteLayout.LayoutFlags="All">
-            <!-- Normal Page Content -->
-            <Image
-                Source="logo.png"
-                WidthRequest="150"
-                HorizontalOptions="StartAndExpand">
+        <StackLayout Padding="2">
 
+            <Image
+                Source="logo"
+                VerticalOptions="Center" 
+                HeightRequest="50"
+                >
+                
             </Image>
+
             <StackLayout>
                 <Label
                 Text="Agrega nuevos grupos a esta Materia "

@@ -6,12 +6,11 @@
              Title="Seleccion tipo usuario" >
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding TipoUsuario}">
-            <StackLayout
-                Orientation="Horizontal"
-                HorizontalOptions="StartAndExpand">             
+            <StackLayout>             
                 
                 <Image Source="logo.png"
-                       WidthRequest="150">
+                       VerticalOptions="Center" 
+                HeightRequest="50">
                 </Image>
 
             </StackLayout>

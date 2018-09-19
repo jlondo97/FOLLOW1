@@ -67,7 +67,7 @@ namespace follow.View.EducadoresView
 
             contact data = e.SelectedItem as contact;
             Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos());
-            //  DisplayAlert("Materia", "seleccionada ;) ", "oky");
+            
         }
     }
 }

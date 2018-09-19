@@ -26,7 +26,7 @@
             
             <StackLayout>
                 <ScrollView VerticalOptions="FillAndExpand">
-                    <ListView x:Name="ListaHijos"  ItemsSource="{Binding}">
+                    <ListView x:Name="ListaHijos"  ItemsSource="{Binding}" ItemSelected="ListaHijos_ItemSelected" >
                         <ListView.ItemTemplate>
                             <DataTemplate>                              
                                     <TextCell Text="{Binding Nombre}" />                                 

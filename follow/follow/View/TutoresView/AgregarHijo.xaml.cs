@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
 using System.Diagnostics.Contracts;
+using follow.View.EducadoresView;
 
 namespace follow.View.TutoresView
 {
@@ -19,19 +20,13 @@ namespace follow.View.TutoresView
         #region contructor
         ObservableCollection<Estudiante> estudiantes = new ObservableCollection<Estudiante>();
 
-        public AgregarHijo()
+               public AgregarHijo()
         {
             InitializeComponent();
             ListaHijos.ItemsSource = estudiantes;
             var TapPlus = new TapGestureRecognizer();
             TapPlus.Tapped += TapPlus_Tapped;
             Plus.GestureRecognizers.Add(TapPlus);       
-
-
-
-
-
-
         }
 
         
@@ -80,11 +75,16 @@ namespace follow.View.TutoresView
 
 
 
+                                  #endregion
 
+        private void ListaHijos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
 
+            if (e.SelectedItem == null) { return; }
 
+           contact data = e.SelectedItem as contact;
+            Application.Current.MainPage.Navigation.PushAsync(new ListaTareasTutorPage());
 
-
-        #endregion
+        }
     }
 }

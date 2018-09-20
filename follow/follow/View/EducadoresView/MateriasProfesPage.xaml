@@ -69,7 +69,7 @@
          FontSize="18"
          TextColor="White"
          HorizontalOptions="Fill"
-         Text="Ingresar Codigo " />
+         Text="Nombre de Materia " />
 
                 <Entry x:Name="EnteredName"
          Placeholder=" Curso"

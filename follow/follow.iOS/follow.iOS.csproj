@@ -188,6 +188,6 @@
     <BundleResource Include="Resources\Plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Inicio.svg" />
+    <BundleResource Include="Resources\Inicio.png" />
   </ItemGroup>
 </Project>

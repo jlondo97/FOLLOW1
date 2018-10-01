@@ -1,4 +1,5 @@
-﻿using System;
+﻿using follow.View.IngresosView;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,11 @@ namespace follow.View
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void Registrar(object sender, EventArgs e)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new Registrar());
+
+        }
+    }
 }

@@ -60,6 +60,7 @@
                     </Label>
 
                     <Button Text="Registrar"
+                    Clicked="Registrar"
                     Command="{Binding IsRegistrar}"
                     BackgroundColor="#31D022"
                     BorderRadius="20">

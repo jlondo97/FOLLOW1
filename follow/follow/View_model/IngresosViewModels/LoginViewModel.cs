@@ -86,6 +86,9 @@ namespace follow.View_models.IngresosViewModels
             }
 
         }
+ 
+
+     
 
         private async void Entrar()
 

@@ -12,6 +12,8 @@ namespace follow.View_models.IngresosViewModels
     using View.IngresosView;
     using View_model.IngresosViewModel;
     using follow.View_model;
+    using follow.Infrastructure;
+    using System.Data.SqlClient;
 
     public class LoginViewModel : BaseViewModel
     {
@@ -69,8 +71,6 @@ namespace follow.View_models.IngresosViewModels
         public LoginViewModel()
         {
             this.IsRemember = true;
-            this.Email = "jlondo97@eafit.edu.co";
-            this.Contraseña = "1234";
         }
         #endregion
 
@@ -86,14 +86,14 @@ namespace follow.View_models.IngresosViewModels
             }
 
         }
- 
 
-     
+
+
 
         private async void Entrar()
 
         {
-            if (string.IsNullOrEmpty(this.Email))
+           if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert("Error con el Email",
                     "Debes poner un Email -.-"
@@ -109,22 +109,73 @@ namespace follow.View_models.IngresosViewModels
                 return;
             }
 
-            if (this.Email != "jlondo97@eafit.edu.co" || this.Contraseña != "1234")
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Login Error",
-                    "Usuario o contraseña incorrecto",
-                    "ok");
-                this.Contraseña = string.Empty;
-                return;
-            }
+           
+            string conexion = Login(this.email, this.contraseña);
+            
+            this.email = "";
+            this.contraseña = "";
             this.email = string.Empty;
             this.contraseña = string.Empty;
+            if (conexion == "Failure")
+            {
+                await Application.Current.MainPage.DisplayAlert("Sorry :(",  "Hubo un error en la conexión", "ok");
 
-            MainViewModel.GetInstance().Seleccion = new SeleccionUsuarioViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage());
-            
+            }
+            else
+            {
+                if (conexion != "Bienvenido")
+                {
+                    await Application.Current.MainPage.DisplayAlert("Sorry :(", conexion, "ok");
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("En hora buena ", conexion + " A Follow", "Aceptar");
 
+                    MainViewModel.GetInstance().Seleccion = new SeleccionUsuarioViewModel();
+                    await Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage());
+                }
+            }
+
+        }
+
+        public static string Login(string email, string Pass)
+        {
+            try
+            {
+                SqlDataReader reader = Coneccion6.Select("UserPassword", "UserLogin","where Email = '" + email + "'" );
+                string str = string.Empty;
+                string Des = string.Empty;
+
+                while (reader.Read())
+                {
+                    str = reader.GetString(0);
+                }
+
+                if (str == string.Empty)
+                {
+                    Des = "No existe cuenta";
+                }
+                if (str != string.Empty)
+                {
+                    if (Pass == str)
+                    {
+                        Des = "Bienvenido";
+                    }
+                    else
+                    {
+                        Des = "Contraseña no valida";
+                    }
+                }
+
+
+                return Des;
+
+            }
+            catch (Exception e)
+            {
+                return "Failure";
+                throw e;
+            }
         }
 
         public ICommand IsRegistrar

@@ -1,22 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="follow.View.EducadoresView.AgregarGrupos">
+             x:Class="follow.View.EducadoresView.AgregarGrupos"
+              BindingContext="{Binding Main, Source={StaticResource Locator }}"
+             Title="Grupos" >
+
     <AbsoluteLayout>
         <!-- Normal Page Content -->
-        <StackLayout Padding="2">
-
+        <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All">
+            <!-- Normal Page Content -->
             <Image
-                Source="logo"
+                Source="logo.png"
                 VerticalOptions="Center" 
                 HeightRequest="50"
-                >
-                
-            </Image>
-
+></Image>
             <StackLayout>
                 <Label
-                Text="Agrega nuevos grupos a esta Materia "
+                Text="Agregar nuevos grupos a esta materia  "
                  Margin="10,50"    ></Label>
             </StackLayout>
 
@@ -24,7 +25,7 @@
 
             <StackLayout>
                 <ScrollView VerticalOptions="FillAndExpand">
-                    <ListView x:Name="ListaGrupos"  ItemsSource="{Binding}" >
+                    <ListView x:Name="ListaGrupos"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextCell Text="{Binding Nombre}" />
@@ -69,7 +70,7 @@
          FontSize="18"
          TextColor="White"
          HorizontalOptions="Fill"
-         Text="Ingresar Codigo " />
+         Text="Nombre de Materia " />
 
                 <Entry x:Name="EnteredName"
          Placeholder=" Curso"
@@ -86,7 +87,7 @@
                             BackgroundColor="#31D022"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
-                
+                Clicked="OnCancelButtonClicked"
                             Margin="20"/>
 
                     <Button Text="Agregar" FontSize="Medium"
@@ -94,7 +95,7 @@
                             BackgroundColor="#31D022"
                   VerticalOptions="CenterAndExpand"
                   HorizontalOptions="Center"
-                  
+                  Clicked="OnOKButtonClicked"
                    Margin="20"/>
                 </StackLayout>
 
@@ -102,4 +103,6 @@
 
         </ContentView>
     </AbsoluteLayout>
+
+
 </ContentPage>

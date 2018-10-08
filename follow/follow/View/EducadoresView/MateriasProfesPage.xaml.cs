@@ -33,7 +33,7 @@ namespace follow.View.EducadoresView
 
         }
 
-        void OnOKButtonClicked(object sender, System.EventArgs args)
+        void OnOKButtonClicked(object sender, EventArgs args)
         {
             overlay.IsVisible = false;
 

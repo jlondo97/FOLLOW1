@@ -7,17 +7,23 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Image
+           
+
+
+
+                    <Image
                 Source="logo"
                 VerticalOptions="Center" 
                 HeightRequest="50" >
-            </Image>
-            <Label Text="Registrate en la apliacion y disfruta de todos su beneficios"
-                   VerticalOptions="EndAndExpand"
-                   Margin="40"> </Label>
-            <ScrollView VerticalOptions="CenterAndExpand" >              
+                    </Image>
 
-                    <Grid>
+                  
+                  <Label Text="Registrate en la apliacion y disfruta de todos su beneficios"
+                   VerticalOptions="EndAndExpand"
+                   Margin="40"></Label>
+
+            <ScrollView>
+                <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
@@ -26,30 +32,30 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                    <Label Text="Nombre :" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
-                    <Entry Grid.Row="0" Grid.Column="1" Margin="0,0,40,0" x:Name="Nombre"></Entry>
 
-                    <Label Text="Apellido :" Grid.Row="1" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
-                    <Entry Grid.Row="1" Grid.Column="1" Margin="0,0,40,0"  x:Name="Apellido"></Entry>
+                        <Label Text="Nombre :" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
+                        <Entry Grid.Row="0" Grid.Column="1" Margin="0,0,40,0" x:Name="Nombre"></Entry>
 
-                    <Label Text="Edad :" Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
-                    <Entry Grid.Row="2" Grid.Column="1" Margin="0,0,40,0" x:Name="Edad"></Entry>
+                        <Label Text="Apellido :" Grid.Row="1" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
+                        <Entry Grid.Row="1" Grid.Column="1" Margin="0,0,40,0"  x:Name="Apellido"></Entry>
 
-                    <Label Text="Identificacion :" Grid.Row="3" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
-                    <Entry Grid.Row="3" Grid.Column="1" Margin="0,0,40,0"   Keyboard="Email" x:Name="Id"></Entry>
+                        <Label Text="Edad :" Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
+                        <Entry Grid.Row="2" Grid.Column="1" Margin="0,0,40,0" x:Name="Edad"></Entry>
+
+                        <Label Text="Identificacion :" Grid.Row="3" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
+                        <Entry Grid.Row="3" Grid.Column="1" Margin="0,0,40,0"   Keyboard="Email" x:Name="Id"></Entry>
 
 
-                    <Label Text="Email:" Grid.Row="4" Grid.Column="0" VerticalOptions="CenterAndExpand"  Margin="40,0,0,0"/>
-                    <Entry Grid.Row="4" Grid.Column="1" Margin="0,0,40,0" x:Name="Email"></Entry>
-                        
-                    <Label Text="Contraseña :" Grid.Row="5" Grid.Column="0" VerticalOptions="CenterAndExpand"  Margin="40,0,0,0"/>
-                    <Entry Grid.Row="5" Grid.Column="1" IsPassword="True" Margin="0,0,40,0" x:Name="contraseña"></Entry>
+                        <Label Text="Email:" Grid.Row="4" Grid.Column="0" VerticalOptions="CenterAndExpand"  Margin="40,0,0,0"/>
+                        <Entry Grid.Row="4" Grid.Column="1" Margin="0,0,40,0" x:Name="Email"></Entry>
 
-                    <Label Text="Verificar Contraseña :" Grid.Row="6" Grid.Column="0" VerticalOptions="CenterAndExpand"  Margin="40,0,0,0"/>
-                    <Entry Grid.Row="6" Grid.Column="1" IsPassword="True"  Margin="0,0,40,0" x:Name="confirmacion"></Entry>
-                </Grid>  
-              
+                        <Label Text="Contraseña :" Grid.Row="5" Grid.Column="0" VerticalOptions="CenterAndExpand"  Margin="40,0,0,0"/>
+                        <Entry Grid.Row="5" Grid.Column="1" IsPassword="True" Margin="0,0,40,0" x:Name="contraseña"></Entry>
+
+                        <Label Text="Verificar Contraseña :" Grid.Row="6" Grid.Column="0" VerticalOptions="CenterAndExpand"  Margin="40,0,0,0"/>
+                        <Entry Grid.Row="6" Grid.Column="1" IsPassword="True"  Margin="0,0,40,0" x:Name="confirmacion"></Entry>
+                    </Grid>
+
             </ScrollView>
 
             <Button Text="Registrarse en FOLLOW"
@@ -58,8 +64,10 @@
                     BackgroundColor="#31D022"
                     BorderRadius="20"
                     ></Button>
-                    
-            
+
+             
+
+       
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using follow.Infrastructure;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -35,9 +36,11 @@ namespace follow.View.EducadoresView
 
         void OnOKButtonClicked(object sender, EventArgs args)
         {
+            
             overlay.IsVisible = false;
+            Coneccion6 conn = new Coneccion6();
 
-            if(string.IsNullOrEmpty(this.EnteredName.Text))
+            if (string.IsNullOrEmpty(this.EnteredName.Text))
              {
             DisplayAlert("Error", "No pusiste un nombre :( ", "oky");
 
@@ -45,13 +48,24 @@ namespace follow.View.EducadoresView
 
            else
             {
-            DisplayAlert("Nuevo Curso Agregado", "Tu curso "+ EnteredName.Text+" fue agregado con exito", "oky");
+                string str = "'" + this.EnteredName.Text +"','null'";
+                int res = conn.Insert(str, "MateriaP");
 
-                materia.Add(new Materia{ Nombre = EnteredName.Text });
+                if (res == 0)
+                {
 
+                    DisplayAlert("Nuevo Curso Agregado", "Tu curso " + EnteredName.Text + " fue agregado con exito", "oky");
+                    materia.Add(new Materia { Nombre = str });
+                }
+                else
+                {
+                    DisplayAlert("Error", "Hubo un error en tu creacion de Materia, intentalo otra vez", "Aceptar");
+                }
                 
 
-                            }   
+                          
+
+            }   
 
 
         }

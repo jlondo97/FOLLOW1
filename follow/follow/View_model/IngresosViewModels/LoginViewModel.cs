@@ -116,6 +116,7 @@ namespace follow.View_models.IngresosViewModels
             this.contraseña = "";
             this.email = string.Empty;
             this.contraseña = string.Empty;
+
             if (conexion == "Failure")
             {
                 await Application.Current.MainPage.DisplayAlert("Sorry :(",  "Hubo un error en la conexión", "ok");

@@ -44,6 +44,7 @@ namespace follow.View.IngresosView
                     "'," + this.Edad.Text + ",'" + this.Id.Text + "'";
 
                 int res = conn.Insert(str, "UserLogin");
+
                 if (res == 0)
                 {
                     DisplayAlert("Felicidades", Mnombre + " " + MApellido + " fuiste agregado con exito", "Aceptar");

@@ -9,7 +9,7 @@ namespace follow.Infrastructure
 {
   public class Coneccion6
     {
-
+        
 
         public static SqlConnection CNDB()
         {
@@ -53,6 +53,19 @@ namespace follow.Infrastructure
                 SqlDataReader reader = comando.ExecuteReader();
                 return reader;
         }
- 
+
+        public static int IngresarCandidatos(string Codigo, string Grado_Grupo, string Identificacion_Estudiante, string Tipo_Candidato, string foto)
+        {
+            SqlCommand comando = MetodoDatos.CrearComandoProc("insCandidatos");
+            comando.Parameters.AddWithValue("@Cod", Codigo);
+            comando.Parameters.AddWithValue("@Grado", Grado_Grupo);
+            comando.Parameters.AddWithValue("@Id_Estu", Identificacion_Estudiante);
+            comando.Parameters.AddWithValue("@Tipo_Candi", Tipo_Candidato);
+            comando.Parameters.AddWithValue("@foto", foto);
+            return MetodoDatos.EjecutarComando(comando);
+        }
+
+
+
     }
 }

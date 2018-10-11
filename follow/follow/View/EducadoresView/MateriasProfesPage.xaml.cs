@@ -46,10 +46,12 @@ namespace follow.View.EducadoresView
 
             }
 
+
            else
             {
-                string str = "'" + this.EnteredName.Text + "'','null','null','null','null'";
-                int res = conn.Insert(str, "MateriaPro");
+                AccesoDatosMateria.IngresarMateria(EnteredName.Text, EnteredCorreo.Text,"null");
+                string str =  "'"+ EnteredName.Text +"','"+ EnteredCorreo.Text +"'"; 
+                int res = conn.Insert(str, "Materia");
 
                 if (res == 0)
                 {

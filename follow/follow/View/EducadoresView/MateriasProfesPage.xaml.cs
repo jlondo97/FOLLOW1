@@ -48,7 +48,7 @@ namespace follow.View.EducadoresView
 
            else
             {
-                string str = "'" + this.EnteredName.Text + "','null','null','null','null'";
+                string str = "'" + this.EnteredName.Text + "'','null','null','null','null'";
                 int res = conn.Insert(str, "MateriaPro");
 
                 if (res == 0)

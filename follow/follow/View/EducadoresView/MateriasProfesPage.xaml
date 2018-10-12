@@ -20,7 +20,7 @@
                  Margin="10,50"    ></Label>
             </StackLayout>
 
-
+            <Label x:Name="ListaMate" Text="" />
 
             <StackLayout>
                 <ScrollView VerticalOptions="FillAndExpand">

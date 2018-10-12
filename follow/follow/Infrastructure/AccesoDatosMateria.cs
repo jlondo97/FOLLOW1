@@ -19,5 +19,13 @@ namespace follow.Infrastructure
             return MetodoDatos.EjecutarComando(comando);
         }
 
+
+        public static DataTable BusMaterias()
+        {
+            SqlCommand comando = MetodoDatos.CrearComando();
+            comando.CommandText = "select Materia.Nombre from Materia where Profesor='Jose@gmail.com'";
+            return MetodoDatos.EjecutarComandoSelect(comando);
+        }
+
     }
 }

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using follow.Infrastructure;
+using System.Data.SqlClient;
+using System.Data;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,12 +16,18 @@ namespace follow.View.EducadoresView
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MateriasProfesPage : ContentPage
 	{
+       
         ObservableCollection<Materia> materia = new ObservableCollection<Materia>();
 		public MateriasProfesPage ()
 		{
 			InitializeComponent ();
 
+            // ListaMaterias.ItemsSource = ;
             ListaMaterias.ItemsSource = materia;
+              ListaMaterias = AccesoDatosMateria.BusMaterias();
+
+            
+
             var TapPlus = new TapGestureRecognizer();
             TapPlus.Tapped += TapPlus_Tapped;
             Plus.GestureRecognizers.Add(TapPlus);
@@ -49,6 +57,7 @@ namespace follow.View.EducadoresView
 
            else
             {
+                
               int resultado =  AccesoDatosMateria.IngresarMateria(EnteredName.Text, EnteredCorreo.Text,"null");
                
 
@@ -84,5 +93,7 @@ namespace follow.View.EducadoresView
             Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos());
             
         }
+
+       
     }
 }

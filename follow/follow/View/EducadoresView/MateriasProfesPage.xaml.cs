@@ -22,10 +22,6 @@ namespace follow.View.EducadoresView
 		{
 			InitializeComponent ();
 
-            // ListaMaterias.ItemsSource = ;
-            //  ListaMaterias.ItemsSource = materia;
-            //ListaMaterias = AccesoDatosMateria.BusMaterias();
-
             ListaMaterias.ItemsSource = AccesoDatosMateria.ObtenerMaterias();
 
             var TapPlus = new TapGestureRecognizer();

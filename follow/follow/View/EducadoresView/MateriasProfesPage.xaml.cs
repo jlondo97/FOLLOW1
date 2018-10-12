@@ -49,15 +49,14 @@ namespace follow.View.EducadoresView
 
            else
             {
-                AccesoDatosMateria.IngresarMateria(EnteredName.Text, EnteredCorreo.Text,"null");
-                string str =  "'"+ EnteredName.Text +"','"+ EnteredCorreo.Text +"'"; 
-                int res = conn.Insert(str, "Materia");
+              int resultado =  AccesoDatosMateria.IngresarMateria(EnteredName.Text, EnteredCorreo.Text,"null");
+               
 
-                if (res == 0)
+                if (resultado > 0)
                 {
 
                     DisplayAlert("Nuevo Curso Agregado", "Tu curso " + EnteredName.Text + " fue agregado con exito", "oky");
-                    materia.Add(new Materia { Nombre = str });
+                    
                 }
                 else
                 {

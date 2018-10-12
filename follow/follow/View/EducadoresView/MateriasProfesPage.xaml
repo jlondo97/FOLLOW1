@@ -20,11 +20,9 @@
                  Margin="10,50"    ></Label>
             </StackLayout>
 
-            <Label x:Name="ListaMate" Text="" />
-
-            <StackLayout>
+              <StackLayout>
                 <ScrollView VerticalOptions="FillAndExpand">
-                    <ListView x:Name="ListaMaterias"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" ItemSelected="ListaMaterias_ItemSelected">
+                    <ListView  x:Name="ListaMaterias"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" ItemSelected="ListaMaterias_ItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextCell Text="{Binding Nombre}" />
@@ -35,8 +33,7 @@
                 </ScrollView>
             </StackLayout>
 
-
-
+         
 
             <StackLayout
                 HorizontalOptions="EndAndExpand"

@@ -29,7 +29,7 @@ namespace follow.View.TutoresView
                public AgregarHijo()
         {
             InitializeComponent();
-         //   ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo();
+            ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo();
             
             
             var TapPlus = new TapGestureRecognizer();

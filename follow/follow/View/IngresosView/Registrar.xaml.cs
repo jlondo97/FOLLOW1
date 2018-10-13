@@ -24,7 +24,7 @@ namespace follow.View.IngresosView
             Coneccion6 conn = new Coneccion6();
         
             if (string.IsNullOrEmpty(this.Nombre.Text) || string.IsNullOrEmpty(this.Apellido.Text) ||
-                    string.IsNullOrEmpty(this.Edad.Text) || string.IsNullOrEmpty(this.Id.Text) ||
+                     string.IsNullOrEmpty(this.Id.Text) ||
                      string.IsNullOrEmpty(this.Email.Text) || string.IsNullOrEmpty(this.contraseña.Text) ||
                      string.IsNullOrEmpty(this.confirmacion.Text))
 
@@ -34,20 +34,16 @@ namespace follow.View.IngresosView
             }
             else
             {
-                string Mnombre = Nombre.Text;
-                string MApellido = Apellido.Text;
-
-                MApellido= MApellido.ToUpper();
-                Mnombre= Mnombre.ToUpper();
+             
 
                 string str = "'"+ this.contraseña.Text +"','" + this.Email.Text + "','" + this.Nombre.Text + "','" + this.Apellido.Text +
-                    "'," + this.Edad.Text + ",'" + this.Id.Text + "'";
+                    "',"  + ",'" + this.Id.Text + "'";
 
-                int res = conn.Insert(str, "UserLogin");
+                int res = AccesoDatosUsuario.IngresarUsuario(Email.Text, Nombre.Text, Apellido.Text, Id.Text, contraseña.Text);
 
-                if (res == 0)
+                if (res > 0)
                 {
-                    DisplayAlert("Felicidades", Mnombre + " " + MApellido + " fuiste agregado con exito", "Aceptar");
+                    DisplayAlert("Felicidades"," fuiste agregado con exito", "Aceptar");
                     Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
                 }
                 else

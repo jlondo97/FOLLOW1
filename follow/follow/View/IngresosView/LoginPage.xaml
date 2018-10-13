@@ -18,13 +18,13 @@
 
             <StackLayout>
              
-                <Entry  
+                <Entry  x:Name="Correo"
                    Placeholder="Tu E-mail"
                    Keyboard="Email"
                    Text="{Binding Email,Mode=TwoWay}">
                 </Entry>
 
-                <Entry  
+                    <Entry  x:Name="Contra"
                    Placeholder="Contraseña"
                    IsPassword="True"
                    Text="{Binding Contraseña,Mode=TwoWay}">
@@ -50,9 +50,11 @@
                     Margin="20,30">
 
                     <Button Text="Entrar"
-                    Command="{Binding IsEntrar}"
+                    Clicked="OnEntrarButtonClicked"
                     BackgroundColor="#31D022"
-                    BorderRadius="20">
+                    BorderRadius="20
+                            ">
+                        
                     </Button>
 
                     <Label   Text="or"

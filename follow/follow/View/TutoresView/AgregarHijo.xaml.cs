@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
 using System.Diagnostics.Contracts;
 using follow.View.EducadoresView;
+using follow.Infrastructure;
 
 namespace follow.View.TutoresView
 {
@@ -23,7 +24,8 @@ namespace follow.View.TutoresView
                public AgregarHijo()
         {
             InitializeComponent();
-            ListaHijos.ItemsSource = estudiantes;
+            ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo();
+            
             var TapPlus = new TapGestureRecognizer();
             TapPlus.Tapped += TapPlus_Tapped;
             Plus.GestureRecognizers.Add(TapPlus);       

@@ -75,8 +75,8 @@
          HorizontalOptions="Fill"
          Text="Agregar Estudiante" />
 
-                <Entry x:Name="EnteredName"
-         Placeholder="Nombre Estudiante"
+                <Entry x:Name="EnteredCorreo"
+         Placeholder="Correo del Estudiante"
          TextColor="Black"
          VerticalOptions="CenterAndExpand"
          HorizontalOptions="Center"
@@ -88,6 +88,8 @@
          VerticalOptions="CenterAndExpand"
          HorizontalOptions="Center"
          WidthRequest="250"/>
+
+                
 
                 <StackLayout Orientation="Horizontal"
                HorizontalOptions="Center">

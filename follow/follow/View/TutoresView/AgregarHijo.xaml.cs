@@ -29,7 +29,7 @@ namespace follow.View.TutoresView
                public AgregarHijo()
         {
             InitializeComponent();
-          //  ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo();
+         //   ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo();
             
             
             var TapPlus = new TapGestureRecognizer();
@@ -47,29 +47,30 @@ namespace follow.View.TutoresView
         void TapPlus_Tapped(object sender, EventArgs args)
         {
 
-            EnteredName.Text = string.Empty;
+            EnteredCorreo.Text = string.Empty;
            EnteredId.Text = string.Empty;
             overlay.IsVisible = true;
-            EnteredName.Focus();
+            EnteredCorreo.Focus();
 
         }
 
-       
 
         void OnOKButtonClicked(object sender, System.EventArgs args)
         {
-            DataTable Datos = AccesoDatosTutor.VerificarEstudiante(EnteredName.Text, EnteredId.Text);
+            DataTable Datos = AccesoDatosTutor.VerificarEstudiante(EnteredId.Text);
             if(Datos.Rows.Count>0)
             {
-                
-            }
+
+                AccesoDatosTutor.IngresarHijo(EnteredCorreo.Text);
+                DisplayAlert("Correcto", "Estudiante Agregado", "oky");
+                            }
             else
             {
-                DisplayAlert("Error", "Estudiante No Existe", "oky");
+                DisplayAlert("Error", "Estudiante no se encuentra", "oky");
             }
 
             overlay.IsVisible = false;
-            if (string.IsNullOrEmpty(this.EnteredName.Text) || string.IsNullOrEmpty(this.EnteredId.Text))
+            if (string.IsNullOrEmpty(this.EnteredCorreo.Text) || string.IsNullOrEmpty(this.EnteredId.Text))
             {
                 DisplayAlert("Error", "Debes Agregar Estudiante o Identificacion", "oky");
 
@@ -78,7 +79,7 @@ namespace follow.View.TutoresView
             else
             {
                
-                DisplayAlert("Nuevo Estudiante Agregado", EnteredName.Text, "oky");
+                DisplayAlert("Nuevo Estudiante Agregado", EnteredCorreo.Text, "oky");
 
                // estudiantes.Add(new Estudiante { Nombre = EnteredName.Text, Id = Identificacion.Text });
             }   

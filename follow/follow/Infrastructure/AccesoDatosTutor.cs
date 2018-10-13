@@ -42,11 +42,19 @@ namespace follow.Infrastructure
             }
         }
 
-        public static DataTable VerificarEstudiante(String Nombre, String Identificacion)
+        public static DataTable VerificarEstudiante(String Identificacion)
         {
             SqlCommand Comando = MetodoDatos.CrearComando();
-            Comando.CommandText = "select Nombre, Identificacion from users where Nombre ='"+Nombre+"' and Identificacion='"+Identificacion+"'";
+            Comando.CommandText = "select Identificacion from users where Identificacion='"+Identificacion+"'";
             return MetodoDatos.EjecutarSelect(Comando);
+        }
+
+        public static int IngresarHijo(string Correo)
+        {
+            SqlCommand comando = MetodoDatos.CrearComandoProc("insHijo");
+            comando.Parameters.AddWithValue("@Correo", Correo);
+                       
+            return MetodoDatos.EjecutarComando(comando);
         }
 
     }

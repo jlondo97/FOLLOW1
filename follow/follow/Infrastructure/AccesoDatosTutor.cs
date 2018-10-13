@@ -12,7 +12,8 @@ namespace follow.Infrastructure
         public static List<Hijos> ObtenerHijo()
         {
             List<Hijos> listaHijos = new List<Hijos>();
-            string sql = "select Materia.Nombre from Materia";
+            //  string sql = "select Users.Nombre from users where Identificacion = '456789'and Nombre = 'Jose'";
+            string sql = "select * from Materia";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {
@@ -39,6 +40,13 @@ namespace follow.Infrastructure
 
                 return listaHijos;
             }
+        }
+
+        public static DataTable VerificarEstudiante(String Nombre, String Identificacion)
+        {
+            SqlCommand Comando = MetodoDatos.CrearComando();
+            Comando.CommandText = "select Nombre, Identificacion from users where Nombre ='"+Nombre+"' and Identificacion='"+Identificacion+"'";
+            return MetodoDatos.EjecutarSelect(Comando);
         }
 
     }

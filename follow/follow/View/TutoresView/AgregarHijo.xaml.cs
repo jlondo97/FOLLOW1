@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics.Contracts;
 using follow.View.EducadoresView;
 using follow.Infrastructure;
+using System.Data;
 
 namespace follow.View.TutoresView
 {
@@ -21,10 +22,15 @@ namespace follow.View.TutoresView
         #region contructor
         ObservableCollection<Estudiante> estudiantes = new ObservableCollection<Estudiante>();
 
+      
+    
+      
+
                public AgregarHijo()
         {
             InitializeComponent();
-            ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo();
+          //  ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo();
+            
             
             var TapPlus = new TapGestureRecognizer();
             TapPlus.Tapped += TapPlus_Tapped;
@@ -42,7 +48,7 @@ namespace follow.View.TutoresView
         {
 
             EnteredName.Text = string.Empty;
-            Identificacion.Text = string.Empty;
+           EnteredId.Text = string.Empty;
             overlay.IsVisible = true;
             EnteredName.Focus();
 
@@ -52,8 +58,18 @@ namespace follow.View.TutoresView
 
         void OnOKButtonClicked(object sender, System.EventArgs args)
         {
+            DataTable Datos = AccesoDatosTutor.VerificarEstudiante(EnteredName.Text, EnteredId.Text);
+            if(Datos.Rows.Count>0)
+            {
+                
+            }
+            else
+            {
+                DisplayAlert("Error", "Estudiante No Existe", "oky");
+            }
+
             overlay.IsVisible = false;
-            if (string.IsNullOrEmpty(this.EnteredName.Text) || string.IsNullOrEmpty(this.Identificacion.Text))
+            if (string.IsNullOrEmpty(this.EnteredName.Text) || string.IsNullOrEmpty(this.EnteredId.Text))
             {
                 DisplayAlert("Error", "Debes Agregar Estudiante o Identificacion", "oky");
 
@@ -61,9 +77,10 @@ namespace follow.View.TutoresView
 
             else
             {
+               
                 DisplayAlert("Nuevo Estudiante Agregado", EnteredName.Text, "oky");
 
-                estudiantes.Add(new Estudiante { Nombre = EnteredName.Text, Id = Identificacion.Text });
+               // estudiantes.Add(new Estudiante { Nombre = EnteredName.Text, Id = Identificacion.Text });
             }   
 
 

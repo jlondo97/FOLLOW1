@@ -81,7 +81,7 @@
          VerticalOptions="CenterAndExpand"
          HorizontalOptions="Center"
          WidthRequest="250" />
-                <Entry x:Name="Identificacion"
+                <Entry x:Name="EnteredId"
                         Placeholder="Identificacion Estudiante"
          TextColor="Black"
                        Keyboard="Numeric"

@@ -16,10 +16,12 @@ namespace follow.View.EducadoresView
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MateriasProfesPage : ContentPage
 	{
+        String usuario;
        
         ObservableCollection<Materia> materia = new ObservableCollection<Materia>();
 		public MateriasProfesPage (String correo)
 		{
+            usuario = correo;
 			InitializeComponent ();
 
             ListaMaterias.ItemsSource = AccesoDatosMateria.ObtenerMaterias(correo);
@@ -54,7 +56,7 @@ namespace follow.View.EducadoresView
            else
             {
                 
-              int resultado =  AccesoDatosMateria.IngresarMateria(EnteredName.Text, EnteredCorreo.Text,"null");
+              int resultado =  AccesoDatosMateria.IngresarMateria(EnteredName.Text, usuario,"null");
                
 
                 if (resultado > 0)

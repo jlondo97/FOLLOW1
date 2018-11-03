@@ -74,11 +74,7 @@
          HorizontalOptions="Center"
          WidthRequest="250"></Entry>
                        
-                        <Entry x:Name="EnteredCorreo"
-         Placeholder=" Tu correo"
-         VerticalOptions="CenterAndExpand"
-         HorizontalOptions="Center"
-         WidthRequest="250"/>
+                       
 
 
                 <StackLayout Orientation="Horizontal"

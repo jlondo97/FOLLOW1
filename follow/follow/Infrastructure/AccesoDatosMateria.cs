@@ -13,12 +13,12 @@ namespace follow.Infrastructure
 
 
 
-        public static int IngresarMateria(string Nombre, string Profe, string Grupo)
+        public static int IngresarMateria(string Nombre, string Profe)
         {
             SqlCommand comando = MetodoDatos.CrearComandoProc("insMateria");
             comando.Parameters.AddWithValue("@Nom", Nombre);
             comando.Parameters.AddWithValue("@Profe", Profe);
-            comando.Parameters.AddWithValue("@grupo", Grupo);
+            
 
             return MetodoDatos.EjecutarComando(comando);
         }
@@ -27,14 +27,14 @@ namespace follow.Infrastructure
         public static DataTable BusMaterias()
         {
             SqlCommand comando = MetodoDatos.CrearComando();
-            comando.CommandText = "select Materia.Nombre from Materias where Profesor='Jose@gmail.com'";
+            comando.CommandText = "select Materia.Nombre from Materia where Profesor='Jose@gmail.com'";
             return MetodoDatos.EjecutarComandoSelect(comando);
         }
 
         public static List<Materia> ObtenerMaterias(String correo)
         {
             List<Materia> listaEmpleados = new List<Materia>();
-            string sql = "select Materias.Nombre from Materias where Materias.Profesor='"+correo+"'";
+            string sql = "select Materia.Nombre from Materia where Materia.Profesor='"+correo+"'";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {

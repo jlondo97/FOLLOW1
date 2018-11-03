@@ -56,7 +56,7 @@ namespace follow.View.EducadoresView
            else
             {
                 
-              int resultado =  AccesoDatosMateria.IngresarMateria(EnteredName.Text, usuario,"");
+              int resultado =  AccesoDatosMateria.IngresarMateria(EnteredName.Text, usuario);
                
 
                 if (resultado > 0)
@@ -83,13 +83,16 @@ namespace follow.View.EducadoresView
             overlay.IsVisible = false;
         }
 
+        String NombreMateria;
+
         private void ListaMaterias_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            EnteredName.Text = NombreMateria;
             if (e.SelectedItem ==null) { return; }
           
             
             contact data = e.SelectedItem as contact;
-            Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos());
+            Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos(NombreMateria));
             
         }
 

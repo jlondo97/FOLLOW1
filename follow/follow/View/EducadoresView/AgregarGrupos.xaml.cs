@@ -15,9 +15,11 @@ namespace follow.View.EducadoresView
     public partial class AgregarGrupos : ContentPage
 
     {
+        String MateriaSelected;
         ObservableCollection<Grupo> grupo = new ObservableCollection<Grupo>();
-        public AgregarGrupos()
+        public AgregarGrupos(String Materia)
         {
+            MateriaSelected = Materia;
             InitializeComponent();
             ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos();
            

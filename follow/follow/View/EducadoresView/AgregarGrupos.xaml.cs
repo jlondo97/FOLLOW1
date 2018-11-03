@@ -15,11 +15,12 @@ namespace follow.View.EducadoresView
     public partial class AgregarGrupos : ContentPage
 
     {
-        String MateriaSelected;
+        string MateriaSelected;
         ObservableCollection<Grupo> grupo = new ObservableCollection<Grupo>();
-        public AgregarGrupos(String Materia)
+        public AgregarGrupos(string Materia)
         {
             MateriaSelected = Materia;
+         
             InitializeComponent();
             ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos();
            
@@ -52,7 +53,7 @@ namespace follow.View.EducadoresView
             else
             {
 
-                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text);
+                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, MateriaSelected);
 
 
                 if (resultado > 0)

@@ -16,8 +16,8 @@
                 HeightRequest="50"
 ></Image>
             <StackLayout>
-                <Label
-                Text="Agregar nuevos grupos a esta materia  "
+                <Label x:Name="materiatitle"
+             
                  Margin="10,50"    ></Label>
             </StackLayout>
 

@@ -17,7 +17,8 @@ namespace follow.View.EducadoresView
 	public partial class MateriasProfesPage : ContentPage
 	{
         String usuario;
-       
+        string mate;
+
         ObservableCollection<Materia> materia = new ObservableCollection<Materia>();
 		public MateriasProfesPage (String correo)
 		{
@@ -83,16 +84,21 @@ namespace follow.View.EducadoresView
             overlay.IsVisible = false;
         }
 
-        String NombreMateria;
-
+        
+        
         private void ListaMaterias_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            EnteredName.Text = NombreMateria;
+
+
+
+            ListaMaterias.ItemsSource = mate;
+           
+
             if (e.SelectedItem ==null) { return; }
-          
-            
+
+                        
             contact data = e.SelectedItem as contact;
-            Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos(NombreMateria));
+            Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos(mate));
             
         }
 

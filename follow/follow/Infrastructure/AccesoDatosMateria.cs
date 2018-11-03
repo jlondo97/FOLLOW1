@@ -15,10 +15,10 @@ namespace follow.Infrastructure
 
         public static int IngresarMateria(string Nombre, string Profe, string Grupo)
         {
-            SqlCommand comando = MetodoDatos.CrearComandoProc("insMaterias");
+            SqlCommand comando = MetodoDatos.CrearComandoProc("insMateria");
             comando.Parameters.AddWithValue("@Nom", Nombre);
             comando.Parameters.AddWithValue("@Profe", Profe);
-            comando.Parameters.AddWithValue("@grup", Grupo);
+            comando.Parameters.AddWithValue("@grupo", Grupo);
 
             return MetodoDatos.EjecutarComando(comando);
         }

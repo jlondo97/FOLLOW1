@@ -56,7 +56,7 @@ namespace follow.View.EducadoresView
            else
             {
                 
-              int resultado =  AccesoDatosMateria.IngresarMateria(EnteredName.Text, usuario,"null");
+              int resultado =  AccesoDatosMateria.IngresarMateria(EnteredName.Text, usuario,"");
                
 
                 if (resultado > 0)

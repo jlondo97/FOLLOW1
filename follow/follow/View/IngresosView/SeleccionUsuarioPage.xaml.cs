@@ -19,9 +19,10 @@ using Xamarin.Forms.Xaml;
 
 	public partial class SeleccionUsuarioPage : ContentPage
 	{
-		public SeleccionUsuarioPage ()
+		public SeleccionUsuarioPage (string correo)
 		{
 			InitializeComponent ();
+            Usuario.Text = string.Format("Bienvenid@" + correo);
 
             var TapTablero = new TapGestureRecognizer();
             TapTablero.Tapped += tapTablero_Tapped;

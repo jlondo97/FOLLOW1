@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using follow.Infrastructure;
 
 namespace follow.View.EducadoresView
 {
@@ -18,7 +19,8 @@ namespace follow.View.EducadoresView
         public AgregarGrupos()
         {
             InitializeComponent();
-            ListaGrupos.ItemsSource = grupo;
+            ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos();
+           
             var TapPlus = new TapGestureRecognizer();
             TapPlus.Tapped += TapPlus_Tapped;
             Plus.GestureRecognizers.Add(TapPlus);
@@ -36,6 +38,7 @@ namespace follow.View.EducadoresView
         void OnOKButtonClicked(object sender, EventArgs args)
         {
             overlay.IsVisible = false;
+            Coneccion6 conn = new Coneccion6();
 
             if (string.IsNullOrEmpty(this.EnteredName.Text))
             {
@@ -43,18 +46,29 @@ namespace follow.View.EducadoresView
 
             }
 
+
             else
             {
-                DisplayAlert("Nuevo Materia Agregada", "Tu curso " + EnteredName.Text + " fue agregado con exito", "oky");
 
-                grupo.Add(new Grupo { Nombre = EnteredName.Text });
+                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text);
+
+
+                if (resultado > 0)
+                {
+
+                    DisplayAlert("Nuevo grupo Agregado", "Tu curso " + EnteredName.Text + " fue agregado con exito", "oky");
+
+                }
+                else
+                {
+                    DisplayAlert("Error", "Hubo un error en tu creacion de Grupo, intentalo otra vez", "Aceptar");
+                }
+
 
             }
-
         }
 
-
-        void OnCancelButtonClicked(object sender, EventArgs args)
+            void OnCancelButtonClicked(object sender, EventArgs args)
         {
             overlay.IsVisible = false;
         }

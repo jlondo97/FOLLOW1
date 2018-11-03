@@ -26,13 +26,18 @@ namespace follow.View
 
         }
 
+        
+       
+     
         void OnEntrarButtonClicked(object sender, System.EventArgs args)
         {
-
+            string Usuario;
+            Usuario = Correo.Text;
+          
             DataTable Datos = AccesoDatosUsuario.VerificarUsuario(Correo.Text,Contra.Text);
             if (Datos.Rows.Count > 0)
             {
-                Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage());
+                Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage(Usuario));
 
             }
             else

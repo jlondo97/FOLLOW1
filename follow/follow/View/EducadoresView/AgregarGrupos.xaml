@@ -70,7 +70,7 @@
          FontSize="18"
          TextColor="White"
          HorizontalOptions="Fill"
-         Text="Nombre de Materia " />
+         Text="Agregar un nuevo grupo " />
 
                 <Entry x:Name="EnteredName"
          Placeholder=" Curso"
@@ -78,7 +78,7 @@
          HorizontalOptions="Center"
          WidthRequest="250" />
 
-
+               
                 <StackLayout Orientation="Horizontal"
                HorizontalOptions="Center">
 

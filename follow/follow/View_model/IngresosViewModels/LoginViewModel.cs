@@ -130,10 +130,11 @@ namespace follow.View_models.IngresosViewModels
                 }
                 else
                 {
+
                     await Application.Current.MainPage.DisplayAlert("En hora buena ", conexion + " A Follow", "Aceptar");
 
                     MainViewModel.GetInstance().Seleccion = new SeleccionUsuarioViewModel();
-                    await Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage());
+                    await Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage(Email));
                 }
             }
 

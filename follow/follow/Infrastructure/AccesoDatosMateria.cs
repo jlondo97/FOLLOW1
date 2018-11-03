@@ -7,8 +7,11 @@ using follow.View.EducadoresView;
 
 namespace follow.Infrastructure
 {
-  public class AccesoDatosMateria
+    public class AccesoDatosMateria
     {
+
+
+
 
         public static int IngresarMateria(string Nombre, string Profe, string Grupo)
         {
@@ -16,7 +19,7 @@ namespace follow.Infrastructure
             comando.Parameters.AddWithValue("@Nom", Nombre);
             comando.Parameters.AddWithValue("@Profe", Profe);
             comando.Parameters.AddWithValue("@grup", Grupo);
-            
+
             return MetodoDatos.EjecutarComando(comando);
         }
 
@@ -46,7 +49,7 @@ namespace follow.Infrastructure
                             Materia materia = new Materia()
                             {
                                 Nombre = reader.GetString(0),
-                                
+
                             };
 
                             listaEmpleados.Add(materia);
@@ -58,6 +61,13 @@ namespace follow.Infrastructure
 
                 return listaEmpleados;
             }
+
+
+
         }
     }
 }
+
+       
+    
+    

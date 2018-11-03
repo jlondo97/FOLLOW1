@@ -84,12 +84,14 @@ namespace follow.View.EducadoresView
         private void ListaMaterias_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem ==null) { return; }
-
+          
+            
             contact data = e.SelectedItem as contact;
             Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos());
             
         }
 
+        
        
     }
 }

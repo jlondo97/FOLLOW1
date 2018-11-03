@@ -13,6 +13,13 @@
                 HeightRequest="50">
                 </Image>
 
+                <Label x:Name="Usuario"
+                           Font="30"
+                           HorizontalOptions="Center"
+                           VerticalOptions="StartAndExpand"
+                           >
+                </Label>
+
             </StackLayout>
             
             <StackLayout VerticalOptions="StartAndExpand">
@@ -32,6 +39,10 @@
                     HorizontalOptions="CenterAndExpand"
                     WidthRequest="80">
                     </Image>
+
+                    
+                    
+                    
                 <Label
                     Text="Educador"
                     HorizontalOptions="StartAndExpand"

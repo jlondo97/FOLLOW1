@@ -2,8 +2,6 @@
 {
     public class Grupo
     {
-        public string Nombre { get; set; }
-        public string codigo { get; set; }
-        public object Estudiante { get; set;}
+               public string Nombre { get; set; }
     }
 } 

@@ -31,10 +31,10 @@ namespace follow.Infrastructure
             return MetodoDatos.EjecutarComandoSelect(comando);
         }
 
-        public static List<Materia> ObtenerMaterias()
+        public static List<Materia> ObtenerMaterias(String correo)
         {
             List<Materia> listaEmpleados = new List<Materia>();
-            string sql = "select Materia.Nombre from Materia";
+            string sql = "select Materia.Nombre from Materia where Materia.Profesor='"+correo+"'";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {

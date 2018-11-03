@@ -18,11 +18,11 @@ namespace follow.View.EducadoresView
 	{
        
         ObservableCollection<Materia> materia = new ObservableCollection<Materia>();
-		public MateriasProfesPage ()
+		public MateriasProfesPage (String correo)
 		{
 			InitializeComponent ();
 
-            ListaMaterias.ItemsSource = AccesoDatosMateria.ObtenerMaterias();
+            ListaMaterias.ItemsSource = AccesoDatosMateria.ObtenerMaterias(correo);
 
             var TapPlus = new TapGestureRecognizer();
             TapPlus.Tapped += TapPlus_Tapped;

@@ -41,7 +41,8 @@ using Xamarin.Forms.Xaml;
 
             void tapTablero_Tapped(object sender, EventArgs arg)
             {
-                Application.Current.MainPage.Navigation.PushAsync(new MateriasProfesPage());
+               
+                Application.Current.MainPage.Navigation.PushAsync(new MateriasProfesPage(correo));
             }
 
             void tapLapiz_Tapped(object sender, EventArgs args)

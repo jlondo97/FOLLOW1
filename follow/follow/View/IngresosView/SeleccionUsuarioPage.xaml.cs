@@ -52,7 +52,7 @@ using Xamarin.Forms.Xaml;
 
            void tapCasa_Tapped(object sender, EventArgs args)
            {
-            Application.Current.MainPage.Navigation.PushAsync(new AgregarHijo());
+            Application.Current.MainPage.Navigation.PushAsync(new AgregarHijo(correo));
             }
 
             #endregion

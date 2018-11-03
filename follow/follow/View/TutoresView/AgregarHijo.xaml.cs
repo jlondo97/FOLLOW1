@@ -17,19 +17,16 @@ namespace follow.View.TutoresView
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AgregarHijo : ContentPage 
         {
-
+        String user;
 
         #region contructor
         ObservableCollection<Estudiante> estudiantes = new ObservableCollection<Estudiante>();
-
-      
-    
-      
-
-               public AgregarHijo()
+  
+                     public AgregarHijo(String Usuario)
         {
+            user=Usuario;
             InitializeComponent();
-            ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo();
+            ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo(Usuario);
             
             
             var TapPlus = new TapGestureRecognizer();
@@ -61,7 +58,7 @@ namespace follow.View.TutoresView
             if(Datos.Rows.Count>0)
             {
 
-                AccesoDatosTutor.IngresarHijo(EnteredCorreo.Text);
+                AccesoDatosTutor.IngresarHijo(EnteredCorreo.Text,user);
                 DisplayAlert("Correcto", "Estudiante Agregado", "oky");
                             }
             else

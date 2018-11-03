@@ -9,10 +9,6 @@ namespace follow.Infrastructure
 {
     public class AccesoDatosMateria
     {
-
-
-
-
         public static int IngresarMateria(string Nombre, string Profe)
         {
             SqlCommand comando = MetodoDatos.CrearComandoProc("insMateria");

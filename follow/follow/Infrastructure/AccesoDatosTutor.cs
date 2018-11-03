@@ -9,11 +9,11 @@ namespace follow.Infrastructure
 {
    public class AccesoDatosTutor
     {
-        public static List<Hijos> ObtenerHijo()
+        public static List<Hijos> ObtenerHijo(string usuario)
         {
             List<Hijos> listaHijos = new List<Hijos>();
             //  string sql = "select Users.Nombre from users where Identificacion = '456789'and Nombre = 'Jose'";
-            string sql = "select users.Nombre from Hijos inner join users on users.Correo = Hijos.Correo";
+            string sql = "select users.Nombre from Hijo inner join users on users.Correo = Hijo.Correo where hijo.Tutor='" + usuario + "'";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {
@@ -49,11 +49,12 @@ namespace follow.Infrastructure
             return MetodoDatos.EjecutarSelect(Comando);
         }
 
-        public static int IngresarHijo(string Correo)
+        public static int IngresarHijo(string Correo, string tutor)
         {
             SqlCommand comando = MetodoDatos.CrearComandoProc("insHijo");
             comando.Parameters.AddWithValue("@Correo", Correo);
-                       
+            comando.Parameters.AddWithValue("@Tutor", tutor);
+
             return MetodoDatos.EjecutarComando(comando);
         }
 

@@ -90,6 +90,8 @@ namespace follow.View.EducadoresView
         {
 
 
+           // Materia materia = sender as Materia;
+            
 
             ListaMaterias.ItemsSource = mate;
            

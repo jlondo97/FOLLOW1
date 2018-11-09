@@ -14,10 +14,9 @@
                 </Image>
 
                 <Label x:Name="Usuario"
-                           Font="30"
-                           HorizontalOptions="Center"
-                           VerticalOptions="StartAndExpand"
-                           >
+                           VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center">
+                    
                 </Label>
 
             </StackLayout>

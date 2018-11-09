@@ -46,7 +46,7 @@
 
                 <Image Source="Plus.png"
                        x:Name="Plus"></Image>
-                <Label Text="Agregar"
+                <Label Text="Agregar Grupos"
                        Margin="10"></Label>
             </StackLayout>
         </StackLayout>
@@ -73,7 +73,7 @@
          Text="Agregar un nuevo grupo " />
 
                 <Entry x:Name="EnteredName"
-         Placeholder=" Curso"
+         Placeholder="Agregar Grupo"
          VerticalOptions="CenterAndExpand"
          HorizontalOptions="Center"
          WidthRequest="250" />

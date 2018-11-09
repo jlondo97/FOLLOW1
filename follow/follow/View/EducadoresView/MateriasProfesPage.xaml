@@ -42,7 +42,7 @@
 
                 <Image Source="Plus.png"
                        x:Name="Plus"></Image>
-                <Label Text="Agregar"
+                <Label Text="Agregar Materia"
                        Margin="10"></Label>
             </StackLayout>
         </StackLayout>

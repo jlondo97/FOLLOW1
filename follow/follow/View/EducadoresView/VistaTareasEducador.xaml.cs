@@ -16,23 +16,10 @@ namespace follow.View.EducadoresView
 	{
         public VistaTareasEducador()
         {
-            InitializeComponent();
-            string codigo = codigo_Grupo();
-            codigoprueba.Text = string.Format("codigo de grupo :" + codigo);
+            InitializeComponent();            
             
 		}
 
-        public string codigo_Grupo()
-        {
-            var longitud = 6;
-            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            StringBuilder res = new StringBuilder();
-            Random rnd = new Random();
-            while (0 < longitud--)
-            {
-                res.Append(caracteres[rnd.Next(caracteres.Length)]);
-            }
-            return res.ToString();
-        }
+       
     }
 }

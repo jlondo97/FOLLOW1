@@ -35,25 +35,21 @@ namespace follow.View.EducadoresView
             Plus.GestureRecognizers.Add(TapPlus);
         }
 
-        public  string codigo_Grupo()
-        {
-            var posibles = "";
-            Random obj = new Random();
-            string sCadena = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            int longitud = sCadena.Length;
-            char cletra;
-            int nlongitud = 6;
-            string sNuevacadena = string.Empty;
-            for (int i = 0; i < nlongitud; i++)
+          public string codigo_Grupo()
             {
-                cletra =  posibles[obj.Next(nlongitud)];
-                sNuevacadena += cletra.ToString();
+                var longitud = 6;
+                string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+                StringBuilder res = new StringBuilder();
+                Random rnd = new Random();
+                while (0 < longitud--)
+                {
+                    res.Append(caracteres[rnd.Next(caracteres.Length)]);
+                }
+                return res.ToString();
             }
-            return sNuevacadena;
-        }
 
-        void TapPlus_Tapped(object sender, EventArgs args)
-        {
+            void TapPlus_Tapped(object sender, EventArgs args)
+             {
 
             EnteredName.Text = string.Empty;
             overlay.IsVisible = true;
@@ -61,7 +57,7 @@ namespace follow.View.EducadoresView
 
             
 
-        }
+             }
 
         void OnOKButtonClicked(object sender, EventArgs args)
         {

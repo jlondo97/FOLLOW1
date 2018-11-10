@@ -27,7 +27,16 @@
 
             <StackLayout>
 
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <ListView x:Name="ListaGrupos"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Nombre}" />
 
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
             </StackLayout>
 
             <StackLayout 

@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using follow.Infrastructure;
 
+
 namespace follow.View.EducadoresView
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -17,12 +18,14 @@ namespace follow.View.EducadoresView
     {
         string MateriaSelected;
         ObservableCollection<Grupo> grupo = new ObservableCollection<Grupo>();
+
         public AgregarGrupos(string Materia)
         {
             MateriaSelected = Materia;
 
             string codigo = codigo_Grupo();
             Codigo.Text = string.Format("Codigo para tu grupo es :" + codigo);
+
 
             InitializeComponent();
             ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos();

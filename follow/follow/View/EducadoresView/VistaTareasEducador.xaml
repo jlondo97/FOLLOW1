@@ -15,11 +15,9 @@
                 </Image>                 
             </StackLayout>
            
-          <StackLayout>
-            <Label 
-                   x:Name="codigoprueba"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+            
+                
             </StackLayout>
 
             <StackLayout Orientation="Horizontal"

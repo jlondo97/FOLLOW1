@@ -73,6 +73,7 @@
                           VerticalOptions="EndAndExpand">
 
                         <Image Source="facebook_logo"
+                               x:Name="faceb"
                           WidthRequest="50"/>
                     </StackLayout>
 

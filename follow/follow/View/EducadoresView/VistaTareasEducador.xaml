@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="follow.View.EducadoresView.VistaTareasEducador" 
+             BindingContext="{Binding Main, Source={StaticResource Locator }}"
+             Title="Biblioteca Tareas" >
+    
+    <ContentPage.Content>
+       <StackLayout>
+            <StackLayout>
+                <Image
+                Source="logo.png"
+                VerticalOptions="Center" 
+                HeightRequest="50">                    
+                </Image>                 
+            </StackLayout>
+           
+          <StackLayout>
+            <Label 
+                   x:Name="codigoprueba"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="EndAndExpand"
+                Margin="10">
+
+
+                
+                    <Image Source="libro2.png"
+                       x:Name="Tarea"
+                       WidthRequest="40">></Image>
+
+                    <Image Source="profile.png"
+                       x:Name="Profile"
+                       WidthRequest="40"></Image>
+
+
+
+            <StackLayout>
+            <Image Source="Plus.png"
+                       x:Name="Plus"
+                       WidthRequest="80"> ></Image>
+                <Label Text="Nueva Tarea"></Label>
+                 </StackLayout>
+                
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

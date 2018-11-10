@@ -121,6 +121,8 @@
     <AndroidResource Include="Resources\drawable\icono.ico" />
     <Content Include="Resources\drawable\icono.png" />
     <AndroidResource Include="Resources\drawable\Inicio.png" />
+    <AndroidResource Include="Resources\drawable\libro2.png" />
+    <AndroidResource Include="Resources\drawable\profile.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />

@@ -20,7 +20,10 @@ namespace follow.View.EducadoresView
         public AgregarGrupos(string Materia)
         {
             MateriaSelected = Materia;
-         
+
+            string codigo = codigo_Grupo();
+            Codigo.Text = string.Format("Codigo para tu grupo es :" + codigo);
+
             InitializeComponent();
             ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos();
            
@@ -29,12 +32,31 @@ namespace follow.View.EducadoresView
             Plus.GestureRecognizers.Add(TapPlus);
         }
 
+        public  string codigo_Grupo()
+        {
+            var posibles = "";
+            Random obj = new Random();
+            string sCadena = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            int longitud = sCadena.Length;
+            char cletra;
+            int nlongitud = 6;
+            string sNuevacadena = string.Empty;
+            for (int i = 0; i < nlongitud; i++)
+            {
+                cletra =  posibles[obj.Next(nlongitud)];
+                sNuevacadena += cletra.ToString();
+            }
+            return sNuevacadena;
+        }
+
         void TapPlus_Tapped(object sender, EventArgs args)
         {
 
             EnteredName.Text = string.Empty;
             overlay.IsVisible = true;
             EnteredName.Focus();
+
+            
 
         }
 
@@ -59,7 +81,10 @@ namespace follow.View.EducadoresView
                 if (resultado > 0)
                 {
 
-                    DisplayAlert("Nuevo grupo Agregado", "Tu curso " + EnteredName.Text + " fue agregado con exito", "oky");
+                    DisplayAlert("Nuevo grupo Agregado", "Tu Grupo" + EnteredName.Text + " fue agregado con exito", "oky");
+                   
+
+                   
 
                 }
                 else

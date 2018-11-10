@@ -15,8 +15,14 @@
                 VerticalOptions="Center" 
                 HeightRequest="50"
 ></Image>
+            <Label x:Name="Codigo" VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center">
+
+
+            </Label>
             <StackLayout>
                 <Label x:Name="materiatitle"
+                       
              
                  Margin="10,50"    ></Label>
             </StackLayout>
@@ -77,8 +83,8 @@
          VerticalOptions="CenterAndExpand"
          HorizontalOptions="Center"
          WidthRequest="250" />
+             
 
-               
                 <StackLayout Orientation="Horizontal"
                HorizontalOptions="Center">
 
@@ -95,8 +101,11 @@
                             BackgroundColor="#31D022"
                   VerticalOptions="CenterAndExpand"
                   HorizontalOptions="Center"
-                  Clicked="OnOKButtonClicked"
+                  Clicked="OnOKButtonClicked"                            
                    Margin="20"/>
+
+                  
+                    
                 </StackLayout>
 
             </StackLayout>

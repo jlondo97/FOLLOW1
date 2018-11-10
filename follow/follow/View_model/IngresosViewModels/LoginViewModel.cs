@@ -14,6 +14,8 @@ namespace follow.View_models.IngresosViewModels
     using follow.View_model;
     using follow.Infrastructure;
     using System.Data.SqlClient;
+    using follow.View.EducadoresView;
+
 
     public class LoginViewModel : BaseViewModel
     {
@@ -90,57 +92,59 @@ namespace follow.View_models.IngresosViewModels
 
 
 
-        private async void Entrar()
+        private  void  Entrar()
 
         {
-           if (string.IsNullOrEmpty(this.Email))
-            {
-                await Application.Current.MainPage.DisplayAlert("Error con el Email",
-                    "Debes poner un Email -.-"
-                    , "Aceppt");
-                return;
-            }
+            Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador());
 
-            if (string.IsNullOrEmpty(this.Contraseña))
-            {
-                await Application.Current.MainPage.DisplayAlert("Error con la contraseña",
-                    "Debes poner un Contraseña -.-"
-                    , "Aceppt");
-                return;
-            }
+            /*  if (string.IsNullOrEmpty(this.Email))
+              {
+                  await Application.Current.MainPage.DisplayAlert("Error con el Email",
+                      "Debes poner un Email -.-"
+                      , "Aceppt");
+                  return;
+              }
 
-           
-            string conexion = Login(this.email, this.contraseña);
-            
-            this.email = "";
-            this.contraseña = "";
-            this.email = string.Empty;
-            this.contraseña = string.Empty;
+              if (string.IsNullOrEmpty(this.Contraseña))
+              {
+                  await Application.Current.MainPage.DisplayAlert("Error con la contraseña",
+                      "Debes poner un Contraseña -.-"
+                      , "Aceppt");
+                  return;
+              }
 
-            if (conexion == "Failure")
-            {
-                await Application.Current.MainPage.DisplayAlert("Sorry :(",  "Hubo un error en la conexión", "ok");
 
-            }
-            else
-            {
-                if (conexion != "Bienvenido")
-                {
-                    await Application.Current.MainPage.DisplayAlert("Sorry :(", conexion, "ok");
-                }
-                else
-                {
+              string conexion = Login(this.email, this.contraseña);
 
-                    await Application.Current.MainPage.DisplayAlert("En hora buena ", conexion + " A Follow", "Aceptar");
+              this.email = "";
+              this.contraseña = "";
+              this.email = string.Empty;
+              this.contraseña = string.Empty;
 
-                    MainViewModel.GetInstance().Seleccion = new SeleccionUsuarioViewModel();
-                    await Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage(Email));
-                }
-            }
+              if (conexion == "Failure")
+              {
+                  await Application.Current.MainPage.DisplayAlert("Sorry :(",  "Hubo un error en la conexión", "ok");
+
+              }
+              else
+              {
+                  if (conexion != "Bienvenido")
+                  {
+                      await Application.Current.MainPage.DisplayAlert("Sorry :(", conexion, "ok");
+                  }
+                  else
+                  {
+
+                      await Application.Current.MainPage.DisplayAlert("En hora buena ", conexion + " A Follow", "Aceptar");
+
+                      MainViewModel.GetInstance().Seleccion = new SeleccionUsuarioViewModel();
+                      await Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage(Email));
+                  }
+              }*/
 
         }
 
-        public static string Login(string email, string Pass)
+       /* public static string Login(string email, string Pass)
         {
             try
             {
@@ -178,7 +182,7 @@ namespace follow.View_models.IngresosViewModels
                 return "Failure";
                 throw e;
             }
-        }
+        } */
 
         public ICommand IsRegistrar
         {

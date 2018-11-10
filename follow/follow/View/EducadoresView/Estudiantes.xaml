@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="follow.View.EducadoresView.VistaTareasEducador" 
-             BindingContext="{Binding Main, Source={StaticResource Locator }}"
-             Title="Biblioteca Tareas" >
-
+             x:Class="follow.View.EducadoresView.Estudiantes"
+             Title="Estudiantes">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
@@ -14,16 +12,6 @@
                 HeightRequest="50">
                 </Image>
             </StackLayout>
-            <ScrollView VerticalOptions="FillAndExpand">
-                <ListView x:Name="ListaGrupos"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextCell Text="{Binding Nombre}" />
-
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </ScrollView>
 
             <StackLayout>
 
@@ -35,8 +23,6 @@
                 VerticalOptions="EndAndExpand"
                 Margin="20">
 
-
-
                 <Image Source="libro2.png"
                        x:Name="Tarea"
                        WidthRequest="40"></Image>
@@ -44,16 +30,6 @@
                 <Image Source="profile.png"
                        x:Name="Profile"
                        WidthRequest="40"></Image>
-
-
-
-                <StackLayout>
-                    <Image Source="Plus.png"
-                       x:Name="Plus"
-                       WidthRequest="80"></Image>
-                    <Label Text="Nueva Tarea"></Label>
-                </StackLayout>
-
             </StackLayout>
 
         </StackLayout>

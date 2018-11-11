@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="follow.View.EducadoresView.CrearTareas"
+            BindingContext="{Binding Main, Source={StaticResource Locator }}"
+             Title="Crear Tarea" >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Image
+                Source="logo.png"
+                VerticalOptions="Center" 
+                HeightRequest="50">
+                </Image>
+            </StackLayout>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                
+                <Entry Placeholder="Nombre Tarea :" Grid.Row="0" Grid.Column="0" Margin="10,0,40,0" x:Name="Nombre_Tarea"></Entry>
+
+                <Label Text="Fecha Inicio :" Grid.Row="1" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
+                <Entry Grid.Row="1" Grid.Column="1" Margin="0,0,40,0" x:Name="Fecha_Inicio "></Entry>
+
+                <Label Text="fecha final :" Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
+                <Entry Grid.Row="2" Grid.Column="1" Margin="0,0,40,0"  x:Name="Apellido"></Entry>
+                <Label Text="" Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
+                               
+            </Grid>
+            <StackLayout>
+                <Label Text="Descripcion de la tarea : "  VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
+                <Editor HeightRequest="100" Text=":v" BackgroundColor="#d5f5e3" Margin="40,10" x:Name="Descripcion" ></Editor>
+                <Button Text="Guardar" BorderRadius="50" BackgroundColor="#31D022" Clicked="Guardar_Tarea" Margin="30"
+                        /> 
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

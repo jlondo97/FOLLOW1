@@ -19,15 +19,13 @@ namespace follow.View.EducadoresView
         string MateriaSelected;
         ObservableCollection<Grupo> grupo = new ObservableCollection<Grupo>();
 
-        public AgregarGrupos(string Materia)
-        {
-            MateriaSelected = Materia;
-
-           string codigo = codigo_Grupo();
-           Codigo.Text =("tu Codigo es " + codigo);
-
+        public AgregarGrupos(string Materia){
 
             InitializeComponent();
+            MateriaSelected = Materia;          
+
+            string codigo = codigo_Grupo();
+            Codigo.Text =("tu Codigo es " + codigo);           
             ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos();
            
             var TapPlus = new TapGestureRecognizer();
@@ -35,8 +33,8 @@ namespace follow.View.EducadoresView
             Plus.GestureRecognizers.Add(TapPlus);
         }
 
-          public static string codigo_Grupo()
-            {
+        public static string codigo_Grupo(){
+
                 var longitud = 6;
                 string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
                 StringBuilder res = new StringBuilder();
@@ -48,14 +46,11 @@ namespace follow.View.EducadoresView
                 return res.ToString();
             }
 
-            void TapPlus_Tapped(object sender, EventArgs args)
-             {
-
-            EnteredName.Text = string.Empty;
-            overlay.IsVisible = true;
-            EnteredName.Focus();
-
-            
+        void TapPlus_Tapped(object sender, EventArgs args)
+            {
+              EnteredName.Text = string.Empty;
+              overlay.IsVisible = true;
+              EnteredName.Focus();            
 
              }
 
@@ -69,29 +64,20 @@ namespace follow.View.EducadoresView
                 DisplayAlert("Error", "No pusiste un nombre :( ", "oky");
 
             }
-
-
             else
             {
+                string codigo = codigo_Grupo();
 
-                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, MateriaSelected);
-
+                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, MateriaSelected, codigo);
 
                 if (resultado > 0)
                 {
-
-                    DisplayAlert("Nuevo grupo Agregado", "Tu Grupo" + EnteredName.Text + " fue agregado con exito", "oky");
-                   
-
-                   
-
-                }
+                 DisplayAlert("Nuevo grupo Agregado", "Tu Grupo" + EnteredName.Text + " fue agregado con exito", "oky");    
+                 }
                 else
                 {
                     DisplayAlert("Error", "Hubo un error en tu creacion de Grupo, intentalo otra vez", "Aceptar");
                 }
-
-
             }
         }
 

@@ -10,12 +10,13 @@ namespace follow.Infrastructure
      public class AccesoDatosGrupo
     {
 
-        public static int IngresarGrupo(string Nombre, string Materia)
+        public static int IngresarGrupo(string Nombre, string Materia, string Cod_Materia)
         {
             SqlCommand comando = MetodoDatos.CrearComandoProc("insGrupo");
             
             comando.Parameters.AddWithValue("@Nombre", Nombre);
             comando.Parameters.AddWithValue("@Materia", Materia);
+            comando.Parameters.AddWithValue("@Codigo", Cod_Materia);
 
             return MetodoDatos.EjecutarComando(comando);
         }

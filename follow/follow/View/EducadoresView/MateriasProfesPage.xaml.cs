@@ -89,12 +89,6 @@ namespace follow.View.EducadoresView
         
         private void ListaMaterias_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
-
-           // Materia materia = sender as Materia;
-            
-
-           
            
 
             if (e.SelectedItem ==null) { return; }

@@ -14,29 +14,43 @@ namespace follow.View.EducadoresView
     public partial class CrearTareas : ContentPage
     {
         string des;
+        string GrupoTarea;
 
-        public CrearTareas()
+        public CrearTareas(string Grupo)
         {
             InitializeComponent();
+            GrupoTarea = Grupo;
         }
 
-        private void Guardar_Tarea (object sender, EventArgs e)
+        private void Guardar_Tarea(object sender, EventArgs e)
         {
+           
+            Coneccion6 conn = new Coneccion6();
 
-            if (string.IsNullOrEmpty(NombreTarea.Text) || String.IsNullOrEmpty(DescripcionTarea.Text))               
-             {
-                DisplayAlert("Error", "Todos los campos de resgistro deben ser llenados", "oky");         
+            if (string.IsNullOrEmpty(NombreTarea.Text) || String.IsNullOrEmpty(DescripcionTarea.Text))
+            {
+                DisplayAlert("Error", "Todos los campos de resgistro deben ser llenados", "oky");
             }
             else
             {
-                var Grupo = "";
-                int resultado = AccesoDatosTarea.IngresarTarea(NombreTarea.Text, DescripcionTarea.Text, FechaInicio.Text, FechaFinal.Text,Grupo);
-                 des = DescripcionTarea.Text;
-                 
-              
-                    DisplayAlert("En hora buena ", "Validar con la base de datos y guardar ", "oky");
+
                 
-        }
+
+              int resultado = AccesoDatosTarea.IngresarTarea(NombreTarea.Text, DescripcionTarea.Text, FechaInicio.Text, FechaFinal.Text, GrupoTarea);
+              //  des = DescripcionTarea.Text;
+
+                if (resultado > 0)
+                {
+                    DisplayAlert("En hora buena ", "Validar con la base de datos y guardar ", "oky");
+                }
+                else
+                {
+
+                    DisplayAlert("UPS ", "Parece que algo ha salido mal ", "oky");
+
+                }
+            }
 
         }
+    }
 }

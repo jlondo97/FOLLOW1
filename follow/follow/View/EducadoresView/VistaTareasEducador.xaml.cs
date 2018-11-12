@@ -14,6 +14,7 @@ namespace follow.View.EducadoresView
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VistaTareasEducador : ContentPage
     {
+        string TareaClick;
        
         public VistaTareasEducador(String Grupotomado)
         {
@@ -21,13 +22,8 @@ namespace follow.View.EducadoresView
             InitializeComponent();
 
             grupotitle.Text = Grupotomado;
-            
-          
 
-            
-            
-          
-
+            ListaTareas.ItemsSource = AccesoDatosTarea.ObtenerTareas(grupotitle.Text);
           
 
             var tapPlus = new TapGestureRecognizer();
@@ -47,12 +43,22 @@ namespace follow.View.EducadoresView
 
         void NuevaTarea (object sender, EventArgs args)
         {
-            Application.Current.MainPage.Navigation.PushAsync(new CrearTareas());
+            Application.Current.MainPage.Navigation.PushAsync(new CrearTareas(grupotitle.Text));
         }
 
-                    
-            
-		}
+        private void ListaGrupos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null) { return; }
+
+
+            var tarea = e.SelectedItem as Tarea;
+
+            TareaClick = tarea.Nombre;
+
+
+            Application.Current.MainPage.Navigation.PushAsync(new VistaTarea(TareaClick));
+        }
+    }
 
        
 

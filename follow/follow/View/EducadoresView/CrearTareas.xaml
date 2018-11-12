@@ -28,7 +28,7 @@
                 <Entry Placeholder="Nombre Tarea :" Grid.Row="0" Grid.Column="0" Margin="10,0,40,0" x:Name="NombreTarea"></Entry>
 
                 <Label Text="Fecha Inicio :" Grid.Row="1" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
-                <Entry Grid.Row="1" Grid.Column="1" Margin="0,0,40,0" x:Name="FechaInicio "></Entry>
+                <Entry Grid.Row="1" Grid.Column="1" Margin="0,0,40,0" x:Name="FechaInicio"></Entry>
 
                 <Label Text="fecha final :" Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
                 <Entry Grid.Row="2" Grid.Column="1" Margin="0,0,40,0"  x:Name="FechaFinal"></Entry>
@@ -41,7 +41,15 @@
                 <Button Text="Guardar" BorderRadius="50" BackgroundColor="#31D022" Clicked="Guardar_Tarea" Margin="30"
                         />
                 <Label x:Name="Prueba"></Label>
+            
             </StackLayout>
+            
+            <Label x:Name="Nombre" Text="" />
+            <Label x:Name="Descripcion" Text="" />
+            <Label x:Name="fechainicio" Text="" />
+            <Label x:Name="fechafin" Text="" />
+            <Label x:Name="grupo" Text="" />
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

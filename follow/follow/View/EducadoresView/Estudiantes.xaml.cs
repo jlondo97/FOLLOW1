@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using follow.View.EducadoresView;
+
+
 
 namespace follow.View.EducadoresView
 {
@@ -18,7 +21,12 @@ namespace follow.View.EducadoresView
 
             var TapProfile = new TapGestureRecognizer();
             TapProfile.Tapped += Tap_Profile;
-            Tarea.GestureRecognizers.Add(TapProfile);
+            Tarea.GestureRecognizers.Add(TapProfile);    
+
+            
+
+            
+            
 
         }
 

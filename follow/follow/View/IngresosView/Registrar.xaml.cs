@@ -23,10 +23,12 @@ namespace follow.View.IngresosView
         {
             Coneccion6 conn = new Coneccion6();
         
-            if (string.IsNullOrEmpty(this.Nombre.Text) || string.IsNullOrEmpty(this.Apellido.Text) ||
-                     string.IsNullOrEmpty(this.Id.Text) ||
-                     string.IsNullOrEmpty(this.Email.Text) || string.IsNullOrEmpty(this.contraseña.Text) ||
-                     string.IsNullOrEmpty(this.confirmacion.Text))
+            if (string.IsNullOrEmpty(this.Nombre.Text) ||
+                string.IsNullOrEmpty(this.Apellido.Text) ||
+                string.IsNullOrEmpty(this.Id.Text) ||
+                string.IsNullOrEmpty(this.Email.Text) ||
+                string.IsNullOrEmpty(this.contraseña.Text) ||
+                string.IsNullOrEmpty(this.confirmacion.Text))
 
             {
 

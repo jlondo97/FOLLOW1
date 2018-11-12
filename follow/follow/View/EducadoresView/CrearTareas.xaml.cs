@@ -12,6 +12,8 @@ namespace follow.View.EducadoresView
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CrearTareas : ContentPage
     {
+        string des;
+
         public CrearTareas()
         {
             InitializeComponent();
@@ -20,6 +22,23 @@ namespace follow.View.EducadoresView
         private void Guardar_Tarea (object sender, EventArgs e)
         {
 
+            if (string.IsNullOrEmpty(this.NombreTarea.Text) )
+            
+            {
+                DisplayAlert("Error", "Todos los campos de resgistro deben ser llenados", "oky");
+
+         
+            }
+            else
+            {
+
+                 des = DescripcionTarea.Text;
+                 
+              
+                    DisplayAlert("En hora buena ", "Validar con la base de datos y guardar ", "oky");
+                /// Aqui va lo de acceso datos para tareas y guardar y validar en la base de datos 
+            }
         }
-    }
+
+        }
 }

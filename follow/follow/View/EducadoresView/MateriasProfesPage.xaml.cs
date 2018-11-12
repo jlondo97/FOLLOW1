@@ -18,6 +18,7 @@ namespace follow.View.EducadoresView
 	{
         String usuario;
         string mate;
+        String materiaclick;
 
         ObservableCollection<Materia> materia = new ObservableCollection<Materia>();
 		public MateriasProfesPage (String correo)
@@ -93,14 +94,18 @@ namespace follow.View.EducadoresView
            // Materia materia = sender as Materia;
             
 
-            ListaMaterias.ItemsSource = mate;
+           
            
 
             if (e.SelectedItem ==null) { return; }
 
-                        
-            contact data = e.SelectedItem as contact;
-            Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos(mate));
+
+            var materia = e.SelectedItem as Materia;
+
+            materiaclick = materia.Nombre;
+           
+
+            Application.Current.MainPage.Navigation.PushAsync(new AgregarGrupos(materiaclick));
             
         }
 

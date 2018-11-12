@@ -16,13 +16,14 @@ namespace follow.View.EducadoresView
     public partial class AgregarGrupos : ContentPage
 
     {
-        string MateriaSelected;
+       
         ObservableCollection<Grupo> grupo = new ObservableCollection<Grupo>();
 
-        public AgregarGrupos(string Materia){
+        public AgregarGrupos(string Materiatomada){
 
             InitializeComponent();
-            MateriaSelected = Materia;          
+            materiatitle.Text = Materiatomada;
+                 
 
             string codigo = codigo_Grupo();
             Codigo.Text =("tu Codigo es " + codigo);           

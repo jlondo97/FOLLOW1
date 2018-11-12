@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using follow.Infrastructure;
 
 namespace follow.View.EducadoresView
 {
@@ -28,13 +29,13 @@ namespace follow.View.EducadoresView
             }
             else
             {
-
+                var Grupo = "";
+                int resultado = AccesoDatosTarea.IngresarTarea(NombreTarea.Text, DescripcionTarea.Text, FechaInicio.Text, FechaFinal.Text,Grupo);
                  des = DescripcionTarea.Text;
                  
               
                     DisplayAlert("En hora buena ", "Validar con la base de datos y guardar ", "oky");
-                /// Aqui va lo de acceso datos para tareas y guardar y validar en la base de datos 
-            }
+                
         }
 
         }

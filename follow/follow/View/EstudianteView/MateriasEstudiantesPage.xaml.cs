@@ -1,4 +1,5 @@
 ﻿using follow.Infrastructure;
+using follow.View.EducadoresView;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,7 @@ namespace follow.View.EstudianteView
 	public partial class MateriasEstudiantesPage : ContentPage
 	{
         string correo;
+        string grupoclick;
 		public MateriasEstudiantesPage (string usuario)
 		{
 			InitializeComponent ();
@@ -81,7 +83,13 @@ namespace follow.View.EstudianteView
 
         private void ListaGrupos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Application.Current.MainPage.Navigation.PushAsync(new TareaEstudiante());
+
+            if (e.SelectedItem == null) { return; }
+            var grupo = e.SelectedItem as Grupo;
+
+            grupoclick = grupo.Nombre;
+
+            Application.Current.MainPage.Navigation.PushAsync(new TareaEstudiante(grupoclick));
         }
     }
 }

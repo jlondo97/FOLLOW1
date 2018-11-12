@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using follow.View.EducadoresView;
-
+using follow.Infrastructure;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,10 +14,14 @@ namespace follow.View.EducadoresView
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VistaTareasEducador : ContentPage
     {
-        public VistaTareasEducador()
+       
+        public VistaTareasEducador(String Grupotomado)
         {
 
-            InitializeComponent();          
+            InitializeComponent();
+            grupotitle.Text = Grupotomado;
+            ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerCodigo(Grupotomado);
+          
 
             var TapProfile = new TapGestureRecognizer();
             TapProfile.Tapped += Tap_Profile;

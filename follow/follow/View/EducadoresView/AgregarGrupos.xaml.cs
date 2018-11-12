@@ -17,6 +17,8 @@ namespace follow.View.EducadoresView
 
     {
         string MateriaSelected;
+        string grupoclick;
+        string cod;
         ObservableCollection<Grupo> grupo = new ObservableCollection<Grupo>();
 
         public AgregarGrupos(string Materiatomada){
@@ -68,6 +70,7 @@ namespace follow.View.EducadoresView
             else
             {
                 string codigo = codigo_Grupo();
+                 cod = codigo;
 
                 int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, materiatitle.Text, codigo);
 
@@ -89,7 +92,16 @@ namespace follow.View.EducadoresView
 
         private void ListaGrupos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador());
+
+            if (e.SelectedItem == null) { return; }
+
+
+            var grupo = e.SelectedItem as Grupo;
+
+            grupoclick = grupo.Nombre;
+
+
+            Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador(grupoclick));
         }
     }
 }

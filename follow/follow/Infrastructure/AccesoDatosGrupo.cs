@@ -57,6 +57,42 @@ namespace follow.Infrastructure
 
 
         }
+
+        public static List<Grupo> ObtenerCodigo(string nombre)
+        {
+            List<Grupo> listacodigo = new List<Grupo>();
+            string sql = "select Codigo from grupo where Nombre ='" + nombre + "'";
+
+            using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
+            {
+                con.Open();
+
+                using (SqlCommand comando = new SqlCommand(sql, con))
+                {
+                    using (SqlDataReader reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Grupo grupo = new Grupo()
+                            {
+                                Nombre = reader.GetString(0),
+
+                            };
+
+                            listacodigo.Add(grupo);
+                        }
+                    }
+                }
+
+                con.Close();
+
+                return listacodigo;
+            }
+
+
+
+        }
+
     }
 }
 

@@ -33,7 +33,7 @@ namespace follow.View.EducadoresView
         void Tap_Profile(object sender, EventArgs args)
         {
 
-            Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador());
+           // Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador());
 
         }
     }

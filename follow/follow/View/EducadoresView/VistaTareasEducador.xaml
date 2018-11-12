@@ -14,6 +14,21 @@
                 HeightRequest="50">
                 </Image>
             </StackLayout>
+
+            <StackLayout>
+                <Label x:Name="grupotitle"
+                       
+             
+                 Margin="10,50"    ></Label>
+            </StackLayout>
+
+            <StackLayout>
+                <Label x:Name="codigotitle"
+                       
+             
+                 Margin="10,50"    ></Label>
+            </StackLayout>
+
             <ScrollView VerticalOptions="FillAndExpand">
                 <ListView x:Name="ListaGrupos"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" >
                     <ListView.ItemTemplate>

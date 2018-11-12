@@ -92,12 +92,12 @@ namespace follow.View_models.IngresosViewModels
 
 
 
-        private  void  Entrar()
+        private async void  Entrar()
 
         {
-            Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador());
+     
 
-            /*  if (string.IsNullOrEmpty(this.Email))
+              if (string.IsNullOrEmpty(this.Email))
               {
                   await Application.Current.MainPage.DisplayAlert("Error con el Email",
                       "Debes poner un Email -.-"
@@ -140,11 +140,11 @@ namespace follow.View_models.IngresosViewModels
                       MainViewModel.GetInstance().Seleccion = new SeleccionUsuarioViewModel();
                       await Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage(Email));
                   }
-              }*/
+              }
 
         }
 
-       /* public static string Login(string email, string Pass)
+       public static string Login(string email, string Pass)
         {
             try
             {
@@ -182,7 +182,7 @@ namespace follow.View_models.IngresosViewModels
                 return "Failure";
                 throw e;
             }
-        } */
+        } 
 
         public ICommand IsRegistrar
         {

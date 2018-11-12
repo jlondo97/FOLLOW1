@@ -71,8 +71,8 @@ namespace follow.View.EducadoresView
             {
                 string codigo = codigo_Grupo();
                  cod = codigo;
-
-                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, materiatitle.Text, codigo);
+                var Estudiante = "";
+                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, materiatitle.Text, codigo,Estudiante);
 
                 if (resultado > 0)
                 {

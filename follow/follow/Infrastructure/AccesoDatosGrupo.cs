@@ -10,14 +10,15 @@ namespace follow.Infrastructure
      public class AccesoDatosGrupo
     {
 
-        public static int IngresarGrupo(string Nombre, string Materia, string Cod_Materia)
+        public static int IngresarGrupo(string Nombre, string Materia, string Cod_Materia, string Estudiante)
         {
             SqlCommand comando = MetodoDatos.CrearComandoProc("insGrupo");
 
             comando.Parameters.AddWithValue("@Codigo", Cod_Materia);
             comando.Parameters.AddWithValue("@Nombre", Nombre);
             comando.Parameters.AddWithValue("@Materia", Materia);
-            
+            comando.Parameters.AddWithValue("@Estudiante", Estudiante);
+
 
             return MetodoDatos.EjecutarComando(comando);
         }
@@ -26,7 +27,7 @@ namespace follow.Infrastructure
        public static List<Grupo> ObtenerGrupos()
         {
             List<Grupo> listaGrupo = new List<Grupo>();
-            string sql = "select Nombre from grupo";
+            string sql = "select Nombre from grupos";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {
@@ -61,7 +62,7 @@ namespace follow.Infrastructure
         public static List<Grupo> ObtenerCodigo(string nombre)
         {
             List<Grupo> listacodigo = new List<Grupo>();
-            string sql = "select Codigo from grupo where Nombre ='" + nombre + "'";
+            string sql = "select Codigo from grupos where Nombre ='" + nombre + "'";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {

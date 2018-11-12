@@ -23,7 +23,7 @@
               <StackLayout>
                 <ScrollView VerticalOptions="FillAndExpand"
                             >
-                    <ListView  x:Name="ListaMaterias"  SeparatorColor="green"  AnchorY="10" 
+                    <ListView  x:Name="ListaMaterias"   SeparatorColor="green"  AnchorY="10" 
                                ItemsSource="{Binding}"
                                ItemSelected="ListaMaterias_ItemSelected">
                         <ListView.ItemTemplate>

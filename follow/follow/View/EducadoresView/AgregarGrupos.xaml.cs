@@ -26,7 +26,7 @@ namespace follow.View.EducadoresView
                  
 
             string codigo = codigo_Grupo();
-            Codigo.Text =("tu Codigo es " + codigo);           
+                     
             ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos();
            
             var TapPlus = new TapGestureRecognizer();
@@ -73,8 +73,9 @@ namespace follow.View.EducadoresView
 
                 if (resultado > 0)
                 {
-                 DisplayAlert("Nuevo grupo Agregado", "Tu Grupo" + EnteredName.Text + " fue agregado con exito", "oky");    
-                 }
+                 DisplayAlert("Nuevo grupo Agregado", "Tu Grupo" + EnteredName.Text + " fue agregado con exito", "oky");
+                 Codigo.Text = ("tu Codigo es " + codigo);
+                }
                 else
                 {
                     DisplayAlert("Error", "Hubo un error en tu creacion de Grupo, intentalo otra vez", "Aceptar");

@@ -35,10 +35,14 @@ namespace follow.Infrastructure
         {
             try
             {
-                comando.Connection.Open();
+                comando.Connection.Open();                
                 return comando.ExecuteNonQuery();
             }
-            catch { throw; }
+            catch {
+
+                throw;
+            }
+
             finally
             {
                 comando.Connection.Dispose();

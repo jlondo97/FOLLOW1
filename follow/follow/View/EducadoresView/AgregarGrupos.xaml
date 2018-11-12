@@ -15,10 +15,7 @@
                 VerticalOptions="Center" 
                 HeightRequest="50"
 ></Image>
-            <Label x:Name="Codigo" VerticalOptions="CenterAndExpand"
-                HorizontalOptions="Center">
-
-            </Label>
+            
             
             <StackLayout>
                 <Label x:Name="materiatitle"
@@ -83,6 +80,10 @@
          VerticalOptions="CenterAndExpand"
          HorizontalOptions="Center"
          WidthRequest="250" />
+
+                <Label
+                    x:Name="Codigo"
+                    ></Label>
              
 
                 <StackLayout Orientation="Horizontal"

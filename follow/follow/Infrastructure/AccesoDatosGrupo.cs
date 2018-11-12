@@ -23,8 +23,21 @@ namespace follow.Infrastructure
             return MetodoDatos.EjecutarComando(comando);
         }
 
+        public static int IngresarEstudiante(string Cod_Materia, string Nombre, string Estudiante)
+        {
+            SqlCommand comando = MetodoDatos.CrearComandoProc("insEstGrupo");
 
-       public static List<Grupo> ObtenerGrupos(string materi)
+            comando.Parameters.AddWithValue("@CodEnlace", Cod_Materia);
+            comando.Parameters.AddWithValue("@Nombre", Nombre);
+            comando.Parameters.AddWithValue("@Estudiante", Estudiante);
+
+
+            return MetodoDatos.EjecutarComando(comando);
+        }
+
+
+
+        public static List<Grupo> ObtenerGrupos(string materi)
         {
             List<Grupo> listaGrupo = new List<Grupo>();
             string sql = "select Nombre from grupo where Materia='" + materi + "'";
@@ -97,9 +110,45 @@ namespace follow.Infrastructure
         public static DataTable VerificarGrupo(string Grupo)
         {
             SqlCommand Comando = MetodoDatos.CrearComando();
-            Comando.CommandText = "select Nombre from grupo where Codigo='" + Grupo + "'";
+            Comando.CommandText = "select Nombre from grupo where CodEnlace='" + Grupo + "'";
             return MetodoDatos.EjecutarSelect(Comando);
         }
+
+        public static List<Grupo> ObtenerGruposEst(string correo)
+        {
+            List<Grupo> listaGrupo = new List<Grupo>();
+            string sql = "select Nombre from grupo where Estudiante='" + correo + "'";
+
+            using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
+            {
+                con.Open();
+
+                using (SqlCommand comando = new SqlCommand(sql, con))
+                {
+                    using (SqlDataReader reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Grupo grupo = new Grupo()
+                            {
+                                Nombre = reader.GetString(0),
+
+                            };
+
+                            listaGrupo.Add(grupo);
+                        }
+                    }
+                }
+
+                con.Close();
+
+                return listaGrupo;
+            }
+
+
+
+        }
+
 
     }
 }

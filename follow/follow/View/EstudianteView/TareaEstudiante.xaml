@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="follow.View.EstudianteView.TareaEstudiante"
+             Title="Tareas Materia">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="Plus.png" Text="AgregarMateria" Priority="0" />
+
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout>
+        <!-- Normal Page Content -->
+        <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All">
+            <!-- Normal Page Content -->
+            <Image
+                Source="logo.png"
+                VerticalOptions="Center" 
+                HeightRequest="50">
+
+            </Image>
+            <StackLayout>
+                <Label
+                Text="Tareas asignadas por el profesor"
+                 Margin="10,50"    ></Label>
+            </StackLayout>
+
+
+
+            <StackLayout>
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <ListView x:Name="ListaGrupos"  ItemsSource="{Binding}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Nombre}" />
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+
+        <ContentView x:Name="overlay"
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All"
+               IsVisible="False"
+               BackgroundColor="#C0808080"
+               Padding="10, 0">
+
+            <!-- Overlay -->
+            <StackLayout Orientation="Vertical"
+             BackgroundColor="White"
+             HeightRequest="200"
+             WidthRequest="300"
+             HorizontalOptions="Center"
+             VerticalOptions="Start"
+             Margin="0,50,0,0" >
+
+                <Label BackgroundColor="#31D022"
+         FontSize="18"
+         TextColor="White"
+         HorizontalOptions="Fill"
+         Text="Ingresar Codigo " />
+
+
+               
+
+            </StackLayout>
+
+        </ContentView>
+    </AbsoluteLayout>
+
+
+</ContentPage>

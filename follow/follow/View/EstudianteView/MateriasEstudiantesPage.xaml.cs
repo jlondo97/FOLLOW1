@@ -14,11 +14,12 @@ namespace follow.View.EstudianteView
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MateriasEstudiantesPage : ContentPage
 	{
-		public MateriasEstudiantesPage ()
+        string correo;
+		public MateriasEstudiantesPage (string usuario)
 		{
 			InitializeComponent ();
-
-        
+            correo = usuario;
+            ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGruposEst(correo);
         }
 
         void TapPlus_Tapped(object sender, EventArgs args)
@@ -35,13 +36,22 @@ namespace follow.View.EstudianteView
             overlay.IsVisible = false;
 
 
-            DataTable Datos = AccesoDatosGrupo.VerificarGrupo(EnteredName.Text);
+            DataTable Datos = AccesoDatosGrupo.VerificarGrupo(EnteredCode.Text);
             if (Datos.Rows.Count > 0)
             {
                 //  Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage(Usuario));
-               // DisplayAlert("Holla", "Grupo si existe", "oky");
+                // DisplayAlert("Holla", "Grupo si existe", "oky");
 
+                int resultado = AccesoDatosGrupo.IngresarEstudiante(EnteredCode.Text, EnteredName.Text, correo);
 
+                if (resultado > 0)
+                {
+                    DisplayAlert("Nuevo grupo Agregado", "Tu Grupo fue agregado con exito" , "oky");
+                }
+                else
+                {
+                    DisplayAlert("Error", "Hubo un error en tu creacion de Grupo, intentalo otra vez", "Aceptar");
+                }
 
             }
             else
@@ -67,6 +77,11 @@ namespace follow.View.EstudianteView
         void OnCancelButtonClicked(object sender, EventArgs args)
         {
             overlay.IsVisible = false;
+        }
+
+        private void ListaGrupos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new TareaEstudiante());
         }
     }
 }

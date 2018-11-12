@@ -48,7 +48,7 @@ using Xamarin.Forms.Xaml;
 
             void tapLapiz_Tapped(object sender, EventArgs args)
             {
-                Application.Current.MainPage.Navigation.PushAsync(new MateriasEstudiantesPage());
+                Application.Current.MainPage.Navigation.PushAsync(new MateriasEstudiantesPage(correo));
             }
 
            void tapCasa_Tapped(object sender, EventArgs args)

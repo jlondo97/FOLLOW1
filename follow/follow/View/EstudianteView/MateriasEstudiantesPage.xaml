@@ -31,7 +31,7 @@
 
         <StackLayout>
             <ScrollView VerticalOptions="FillAndExpand">
-                <ListView x:Name="ListaHijos"  ItemsSource="{Binding}">
+                <ListView x:Name="ListaGrupos" ItemSelected="ListaGrupos_ItemSelected" ItemsSource="{Binding}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextCell Text="{Binding Nombre}" />
@@ -65,15 +65,22 @@
          HorizontalOptions="Fill"
          Text="Ingresar Codigo " />
 
-            <Entry x:Name="EnteredName"
+            <Entry x:Name="EnteredCode"
          Placeholder=" Codigo  "
          TextColor="Black"
          VerticalOptions="CenterAndExpand"
          HorizontalOptions="Center"
          WidthRequest="250" />
-            
 
-            <StackLayout Orientation="Horizontal"
+                <Entry x:Name="EnteredName"
+         Placeholder=" Nombre  "
+         TextColor="Black"
+         VerticalOptions="CenterAndExpand"
+         HorizontalOptions="Center"
+         WidthRequest="250" />
+
+
+                <StackLayout Orientation="Horizontal"
                HorizontalOptions="Center">
 
                 <Button Text="Cancelar" FontSize="Medium" 

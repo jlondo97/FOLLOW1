@@ -21,7 +21,7 @@ namespace follow.View.EducadoresView
 
             InitializeComponent();
 
-            grupotitle.Text = Grupotomado;
+            grupotitle.Text = " Grupo : " + Grupotomado;
 
             ListaTareas.ItemsSource = AccesoDatosTarea.ObtenerTareas(grupotitle.Text);
           

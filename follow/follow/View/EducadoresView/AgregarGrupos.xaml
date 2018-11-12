@@ -19,9 +19,10 @@
             
             <StackLayout>
                 <Label x:Name="materiatitle"
+                       FontSize="20"             
+                       Margin="10" 
                        
-             
-                 Margin="10,50"    ></Label>
+                       ></Label>
             </StackLayout>
 
 

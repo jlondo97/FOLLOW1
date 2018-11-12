@@ -24,7 +24,7 @@ namespace follow.View.EducadoresView
         public AgregarGrupos(string Materiatomada){
 
             InitializeComponent();
-            materiatitle.Text = Materiatomada;
+            materiatitle.Text = ("Materia : " + Materiatomada);
                  
 
             string codigo = codigo_Grupo();

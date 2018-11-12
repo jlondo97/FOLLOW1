@@ -22,11 +22,10 @@
             </StackLayout>
 
             <StackLayout>
-                <Label x:Name="grupotitle"               
-                   Margin="10,50"    ></Label>
-                
-                <Label x:Name="codigotitle"                      
-                 Margin="10,50"    ></Label>           
+                <Label x:Name="grupotitle" 
+                       FontSize="20"
+                   Margin="10"    ></Label>               
+                        
                 
             </StackLayout>
 

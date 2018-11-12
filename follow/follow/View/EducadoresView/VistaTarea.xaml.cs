@@ -13,11 +13,20 @@ namespace follow.View.EducadoresView
 	public partial class VistaTarea : ContentPage
 	{
         string tareaClick;
+       
+
 		public VistaTarea (string tarea)
 		{
 			InitializeComponent ();
             tareaClick = tarea;
-            labeltarea.Text = "tarea: " + tareaClick;
-		}
+
+            
+
+            
+          
+            
+        
+
+        }
 	}
 }

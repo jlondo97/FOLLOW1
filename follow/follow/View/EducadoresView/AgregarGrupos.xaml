@@ -28,7 +28,7 @@
 
             <StackLayout>
                 <ScrollView VerticalOptions="FillAndExpand">
-                    <ListView x:Name="ListaGrupos"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" >
+                    <ListView x:Name="ListaGrupos"  SeparatorColor="green" ItemSelected="ListaGrupos_ItemSelected"  AnchorY="10" ItemsSource="{Binding}" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextCell Text="{Binding Nombre}" />
@@ -81,10 +81,7 @@
          HorizontalOptions="Center"
          WidthRequest="250" />
 
-                <Label
-                    x:Name="Codigo"
-                    ></Label>
-             
+                     
 
                 <StackLayout Orientation="Horizontal"
                HorizontalOptions="Center">

@@ -69,12 +69,11 @@ namespace follow.View.EducadoresView
             {
                 string codigo = codigo_Grupo();
 
-                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, MateriaSelected, codigo);
+                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, materiatitle.Text, codigo);
 
                 if (resultado > 0)
                 {
-                 DisplayAlert("Nuevo grupo Agregado", "Tu Grupo" + EnteredName.Text + " fue agregado con exito", "oky");
-                 Codigo.Text = ("tu Codigo es " + codigo);
+                 DisplayAlert("Nuevo grupo Agregado", "Tu Grupo " + EnteredName.Text + " fue agregado con exito y su codigo es: " + codigo, "oky");
                 }
                 else
                 {
@@ -86,6 +85,11 @@ namespace follow.View.EducadoresView
             void OnCancelButtonClicked(object sender, EventArgs args)
         {
             overlay.IsVisible = false;
+        }
+
+        private void ListaGrupos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador());
         }
     }
 }

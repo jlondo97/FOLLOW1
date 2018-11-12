@@ -20,9 +20,7 @@ namespace follow.View
         {
             InitializeComponent();
 
-            var Tapface = new TapGestureRecognizer();
-            Tapface.Tapped += Tap_face;
-            faceb.GestureRecognizers.Add(Tapface);
+           
         }
 
         private void Registrar(object sender, EventArgs e)
@@ -31,10 +29,7 @@ namespace follow.View
 
         }
 
-        void Tap_face(object sender, EventArgs arg)
-        {
-            Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador());
-        }
+   
 
 
 

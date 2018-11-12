@@ -13,10 +13,11 @@ namespace follow.Infrastructure
         public static int IngresarGrupo(string Nombre, string Materia, string Cod_Materia)
         {
             SqlCommand comando = MetodoDatos.CrearComandoProc("insGrupo");
-            
+
+            comando.Parameters.AddWithValue("@Codigo", Cod_Materia);
             comando.Parameters.AddWithValue("@Nombre", Nombre);
             comando.Parameters.AddWithValue("@Materia", Materia);
-            comando.Parameters.AddWithValue("@Codigo", Cod_Materia);
+            
 
             return MetodoDatos.EjecutarComando(comando);
         }
@@ -25,7 +26,7 @@ namespace follow.Infrastructure
        public static List<Grupo> ObtenerGrupos()
         {
             List<Grupo> listaGrupo = new List<Grupo>();
-            string sql = "select NombreGrupo from grupo";
+            string sql = "select Nombre from grupo";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {

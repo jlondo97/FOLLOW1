@@ -25,7 +25,7 @@ namespace follow.View.EducadoresView
 
             InitializeComponent();
             materiatitle.Text = ("Materia : " + Materiatomada);
-                 
+            MateriaSelected = Materiatomada;
 
             string codigo = codigo_Grupo();
                      
@@ -70,7 +70,7 @@ namespace follow.View.EducadoresView
                 string codigo = codigo_Grupo();
                  cod = codigo;
                 var Estudiante = "";
-                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, materiatitle.Text, codigo,Estudiante);
+                int resultado = AccesoDatosGrupo.IngresarGrupo(EnteredName.Text, MateriaSelected, codigo,Estudiante);
 
                 if (resultado > 0)
                 {

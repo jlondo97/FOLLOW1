@@ -14,7 +14,7 @@ namespace follow.Infrastructure
         {
             SqlCommand comando = MetodoDatos.CrearComandoProc("insGrupo");
 
-            comando.Parameters.AddWithValue("@Codigo", Cod_Materia);
+            comando.Parameters.AddWithValue("@CodEnlace", Cod_Materia);
             comando.Parameters.AddWithValue("@Nombre", Nombre);
             comando.Parameters.AddWithValue("@Materia", Materia);
             comando.Parameters.AddWithValue("@Estudiante", Estudiante);
@@ -27,7 +27,7 @@ namespace follow.Infrastructure
        public static List<Grupo> ObtenerGrupos(string materi)
         {
             List<Grupo> listaGrupo = new List<Grupo>();
-            string sql = "select Nombre from grupos where Materia='" + materi + "'";
+            string sql = "select Nombre from grupo where Materia='" + materi + "'";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {
@@ -62,7 +62,7 @@ namespace follow.Infrastructure
         public static List<Grupo> ObtenerCodigo(string nombre)
         {
             List<Grupo> listacodigo = new List<Grupo>();
-            string sql = "select Codigo from grupos where Nombre ='" + nombre + "'";
+            string sql = "select Codigo from grupo where Nombre ='" + nombre + "'";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {
@@ -97,7 +97,7 @@ namespace follow.Infrastructure
         public static DataTable VerificarGrupo(string Grupo)
         {
             SqlCommand Comando = MetodoDatos.CrearComando();
-            Comando.CommandText = "select Nombre from grupos where Codigo='" + Grupo + "'";
+            Comando.CommandText = "select Nombre from grupo where Codigo='" + Grupo + "'";
             return MetodoDatos.EjecutarSelect(Comando);
         }
 

@@ -39,7 +39,9 @@ namespace follow.View.EstudianteView
             if (Datos.Rows.Count > 0)
             {
                 //  Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage(Usuario));
-                DisplayAlert("Holla", "Grupo si existe", "oky");
+               // DisplayAlert("Holla", "Grupo si existe", "oky");
+
+
 
             }
             else

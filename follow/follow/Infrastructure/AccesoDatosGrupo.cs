@@ -24,10 +24,10 @@ namespace follow.Infrastructure
         }
 
 
-       public static List<Grupo> ObtenerGrupos()
+       public static List<Grupo> ObtenerGrupos(string materi)
         {
             List<Grupo> listaGrupo = new List<Grupo>();
-            string sql = "select Nombre from grupos";
+            string sql = "select Nombre from grupos where Materia='" + materi + "'";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {

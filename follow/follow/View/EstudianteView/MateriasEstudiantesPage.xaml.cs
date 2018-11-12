@@ -38,7 +38,7 @@ namespace follow.View.EstudianteView
 
             //else
             //{
-                DisplayAlert("Nuevo Curso Agregado","Tu curso Matematicas 11 fue agregado con exito", "oky");
+                DisplayAlert("EN CONSTRUCCION","Estamos en proceso, gracias", "oky");
 
               //  estudiantes.Add(new Estudiante { Nombre = EnteredName.Text, Id = Identificacion.Text });
             //}   

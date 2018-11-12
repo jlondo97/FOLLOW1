@@ -15,6 +15,7 @@ namespace follow.View.EducadoresView
     public partial class VistaTareasEducador : ContentPage
     {
         string TareaClick;
+        string Grup;
        
         public VistaTareasEducador(String Grupotomado)
         {
@@ -22,6 +23,7 @@ namespace follow.View.EducadoresView
             InitializeComponent();
 
             grupotitle.Text = " Grupo : " + Grupotomado;
+            Grup = Grupotomado;
 
             ListaTareas.ItemsSource = AccesoDatosTarea.ObtenerTareas(grupotitle.Text);
           
@@ -39,7 +41,7 @@ namespace follow.View.EducadoresView
 
         void NuevaTarea (object sender, EventArgs args)
         {
-            Application.Current.MainPage.Navigation.PushAsync(new CrearTareas(grupotitle.Text));
+            Application.Current.MainPage.Navigation.PushAsync(new CrearTareas(Grup));
         }
 
         private void ListaGrupos_ItemSelected(object sender, SelectedItemChangedEventArgs e)

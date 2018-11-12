@@ -94,6 +94,13 @@ namespace follow.Infrastructure
 
         }
 
+        public static DataTable VerificarGrupo(string Grupo)
+        {
+            SqlCommand Comando = MetodoDatos.CrearComando();
+            Comando.CommandText = "select Nombre from grupos where Codigo='" + Grupo + "'";
+            return MetodoDatos.EjecutarSelect(Comando);
+        }
+
     }
 }
 

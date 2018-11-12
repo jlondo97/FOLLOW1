@@ -1,5 +1,7 @@
-﻿using System;
+﻿using follow.Infrastructure;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,14 +33,28 @@ namespace follow.View.EstudianteView
           void OnOKButtonClicked(object sender, System.EventArgs args)
         {
             overlay.IsVisible = false;
-           // {
-               // DisplayAlert("Error", "Debes Agregar Estudiante o Identificacion", "oky");
+
+
+            DataTable Datos = AccesoDatosGrupo.VerificarGrupo(EnteredName.Text);
+            if (Datos.Rows.Count > 0)
+            {
+                //  Application.Current.MainPage.Navigation.PushAsync(new SeleccionUsuarioPage(Usuario));
+                DisplayAlert("Holla", "Grupo si existe", "oky");
+
+            }
+            else
+            {
+                DisplayAlert("Error", "Grupo invalido", "oky");
+            }
+
+            // {
+            // DisplayAlert("Error", "Debes Agregar Estudiante o Identificacion", "oky");
 
             //}
 
             //else
             //{
-                DisplayAlert("EN CONSTRUCCION","Estamos en proceso, gracias", "oky");
+           // DisplayAlert("EN CONSTRUCCION","Estamos en proceso, gracias", "oky");
 
               //  estudiantes.Add(new Estudiante { Nombre = EnteredName.Text, Id = Identificacion.Text });
             //}   

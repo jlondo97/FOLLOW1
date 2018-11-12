@@ -25,11 +25,7 @@ namespace follow.View.EducadoresView
 
             ListaTareas.ItemsSource = AccesoDatosTarea.ObtenerTareas(grupotitle.Text);
           
-
-            var tapPlus = new TapGestureRecognizer();
-            tapPlus.Tapped += NuevaTarea;
-            Plus.GestureRecognizers.Add(tapPlus);
-                
+            
             
             
 

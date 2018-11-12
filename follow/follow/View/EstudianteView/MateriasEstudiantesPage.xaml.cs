@@ -16,9 +16,7 @@ namespace follow.View.EstudianteView
 		{
 			InitializeComponent ();
 
-            var TapPlus = new TapGestureRecognizer();
-            TapPlus.Tapped += TapPlus_Tapped;
-            Plus.GestureRecognizers.Add(TapPlus);
+        
         }
 
         void TapPlus_Tapped(object sender, EventArgs args)

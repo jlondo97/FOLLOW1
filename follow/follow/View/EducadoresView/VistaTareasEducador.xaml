@@ -8,7 +8,8 @@
 
         <ToolbarItem Name="MenuItem1" Order="Primary" Icon="profile.png" Text="Item 1" Priority="0" Clicked="Tap_Profile" />
         <ToolbarItem Name="MenuItem2" Order="Primary" Icon="libro2.png" Text="Item 2" Priority="1"  />
-        
+        <ToolbarItem Name="MenuItem2" Order="Primary" Icon="Plus.png" Text="Item 3" Priority="2" Clicked="NuevaTarea" />
+
     </ContentPage.ToolbarItems>
 
             <ContentPage.Content>
@@ -48,12 +49,7 @@
                 VerticalOptions="EndAndExpand"
                 Margin="20">
 
-                <StackLayout>
-                    <Image Source="Plus.png"
-                       x:Name="Plus"
-                       WidthRequest="80"></Image>
-                    <Label Text="Nueva Tarea"></Label>
-                </StackLayout>
+               
 
             </StackLayout>
 

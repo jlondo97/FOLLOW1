@@ -31,9 +31,7 @@ namespace follow.View.EducadoresView
                      
             ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos();
            
-            var TapPlus = new TapGestureRecognizer();
-            TapPlus.Tapped += TapPlus_Tapped;
-            Plus.GestureRecognizers.Add(TapPlus);
+            
         }
 
         public static string codigo_Grupo(){

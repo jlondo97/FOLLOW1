@@ -28,9 +28,7 @@ namespace follow.View.EducadoresView
 
             ListaMaterias.ItemsSource = AccesoDatosMateria.ObtenerMaterias(correo);
 
-            var TapPlus = new TapGestureRecognizer();
-            TapPlus.Tapped += TapPlus_Tapped;
-            Plus.GestureRecognizers.Add(TapPlus);
+           
         }
 
         void TapPlus_Tapped(object sender, EventArgs args)

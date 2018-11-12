@@ -18,8 +18,8 @@
             <Label x:Name="Codigo" VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center">
 
-
             </Label>
+            
             <StackLayout>
                 <Label x:Name="materiatitle"
                        

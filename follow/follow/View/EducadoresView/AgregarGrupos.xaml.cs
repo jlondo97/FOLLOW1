@@ -23,8 +23,8 @@ namespace follow.View.EducadoresView
         {
             MateriaSelected = Materia;
 
-            string codigo = codigo_Grupo();
-            Codigo.Text = string.Format("Codigo para tu grupo es :" + codigo);
+           string codigo = codigo_Grupo();
+           Codigo.Text =("tu Codigo es " + codigo);
 
 
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace follow.View.EducadoresView
             Plus.GestureRecognizers.Add(TapPlus);
         }
 
-          public string codigo_Grupo()
+          public static string codigo_Grupo()
             {
                 var longitud = 6;
                 string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

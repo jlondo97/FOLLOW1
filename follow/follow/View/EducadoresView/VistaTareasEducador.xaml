@@ -4,8 +4,14 @@
              x:Class="follow.View.EducadoresView.VistaTareasEducador" 
              BindingContext="{Binding Main, Source={StaticResource Locator }}"
              Title="Biblioteca Tareas" >
+    <ContentPage.ToolbarItems>
 
-    <ContentPage.Content>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="profile.png" Text="Item 1" Priority="0" Clicked="Tap_Profile" />
+        <ToolbarItem Name="MenuItem2" Order="Primary" Icon="libro2.png" Text="Item 2" Priority="1"  />
+        
+    </ContentPage.ToolbarItems>
+
+            <ContentPage.Content>
         <StackLayout>
             <StackLayout>
                 <Image
@@ -16,19 +22,15 @@
             </StackLayout>
 
             <StackLayout>
-                <Label x:Name="grupotitle"
-                       
-             
-                 Margin="10,50"    ></Label>
+                <Label x:Name="grupotitle"               
+                   Margin="10,50"    ></Label>
+                
+                <Label x:Name="codigotitle"                      
+                 Margin="10,50"    ></Label>           
+                
             </StackLayout>
 
-            <StackLayout>
-                <Label x:Name="codigotitle"
-                       
-             
-                 Margin="10,50"    ></Label>
-            </StackLayout>
-
+            
             <ScrollView VerticalOptions="FillAndExpand">
                 <ListView x:Name="ListaGrupos"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" >
                     <ListView.ItemTemplate>
@@ -46,18 +48,6 @@
                 HorizontalOptions="EndAndExpand"
                 VerticalOptions="EndAndExpand"
                 Margin="20">
-
-
-
-                <Image Source="libro2.png"
-                       x:Name="Tarea"
-                       WidthRequest="40"></Image>
-
-                <Image Source="profile.png"
-                       x:Name="Profile"
-                       WidthRequest="40"></Image>
-
-
 
                 <StackLayout>
                     <Image Source="Plus.png"

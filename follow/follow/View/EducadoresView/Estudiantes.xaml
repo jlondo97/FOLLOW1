@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="follow.View.EducadoresView.Estudiantes"
              Title="Estudiantes">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="MenuItem1" Order="Primary" Icon="profile.png" Text="Item 1" Priority="0"  />
+        <ToolbarItem x:Name="MenuItem2" Order="Primary" Icon="libro2.png" Text="Item 2" Priority="1" Clicked="Tap_libro" />
+
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
@@ -25,13 +31,7 @@
                 VerticalOptions="EndAndExpand"
                 Margin="20">
 
-                <Image Source="libro2.png"
-                       x:Name="Tarea"
-                       WidthRequest="40"></Image>
-
-                <Image Source="profile.png"
-                       x:Name="Profile"
-                       WidthRequest="40"></Image>
+           
             </StackLayout>
 
         </StackLayout>

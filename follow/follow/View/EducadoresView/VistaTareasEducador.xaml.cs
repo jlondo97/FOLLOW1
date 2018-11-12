@@ -19,13 +19,16 @@ namespace follow.View.EducadoresView
         {
 
             InitializeComponent();
+
             grupotitle.Text = Grupotomado;
-            ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerCodigo(Grupotomado);
+            
           
 
-            var TapProfile = new TapGestureRecognizer();
-            TapProfile.Tapped += Tap_Profile;
-            Profile.GestureRecognizers.Add(TapProfile);
+            
+            
+          
+
+          
 
             var tapPlus = new TapGestureRecognizer();
             tapPlus.Tapped += NuevaTarea;

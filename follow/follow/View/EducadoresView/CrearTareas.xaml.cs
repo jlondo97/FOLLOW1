@@ -22,12 +22,9 @@ namespace follow.View.EducadoresView
         private void Guardar_Tarea (object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(this.NombreTarea.Text) )
-            
-            {
-                DisplayAlert("Error", "Todos los campos de resgistro deben ser llenados", "oky");
-
-         
+            if (string.IsNullOrEmpty(NombreTarea.Text) || String.IsNullOrEmpty(DescripcionTarea.Text))               
+             {
+                DisplayAlert("Error", "Todos los campos de resgistro deben ser llenados", "oky");         
             }
             else
             {

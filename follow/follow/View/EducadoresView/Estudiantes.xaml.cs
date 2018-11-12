@@ -17,23 +17,17 @@ namespace follow.View.EducadoresView
     {
         public Estudiantes()
         {
-            InitializeComponent();
-
-            var TapProfile = new TapGestureRecognizer();
-            TapProfile.Tapped += Tap_Profile;
-            Tarea.GestureRecognizers.Add(TapProfile);    
-
-            
+            InitializeComponent();    
 
             
             
 
         }
 
-        void Tap_Profile(object sender, EventArgs args)
+        void Tap_libro(object sender, EventArgs args)
         {
 
-           // Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador());
+         // Application.Current.MainPage.Navigation.PushAsync(new VistaTareasEducador(" "));
 
         }
     }

@@ -37,7 +37,7 @@
             </Grid>
             <StackLayout>
                 <Label Text="Descripcion de la tarea : "  VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
-                <Editor HeightRequest="100" Text=":v" BackgroundColor="#d5f5e3" Margin="40,10" x:Name="DescripcionTarea" ></Editor>
+                <Editor HeightRequest="100"  BackgroundColor="#d5f5e3" Margin="40,10" x:Name="DescripcionTarea" ></Editor>
                 <Button Text="Guardar" BorderRadius="50" BackgroundColor="#31D022" Clicked="Guardar_Tarea" Margin="30"
                         />
                 <Label x:Name="Prueba"></Label>

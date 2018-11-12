@@ -24,16 +24,14 @@ namespace follow.View.EducadoresView
         public AgregarGrupos(string Materiatomada){
 
             InitializeComponent();
-            materiatitle.Text = Materiatomada;
+            materiatitle.Text = ("Materia : " + Materiatomada);
                  
 
             string codigo = codigo_Grupo();
                      
             ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos();
            
-            var TapPlus = new TapGestureRecognizer();
-            TapPlus.Tapped += TapPlus_Tapped;
-            Plus.GestureRecognizers.Add(TapPlus);
+            
         }
 
         public static string codigo_Grupo(){

@@ -21,15 +21,11 @@ namespace follow.View.EducadoresView
 
             InitializeComponent();
 
-            grupotitle.Text = Grupotomado;
+            grupotitle.Text = " Grupo : " + Grupotomado;
 
             ListaTareas.ItemsSource = AccesoDatosTarea.ObtenerTareas(grupotitle.Text);
           
-
-            var tapPlus = new TapGestureRecognizer();
-            tapPlus.Tapped += NuevaTarea;
-            Plus.GestureRecognizers.Add(tapPlus);
-                
+            
             
             
 

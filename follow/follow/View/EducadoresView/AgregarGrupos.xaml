@@ -4,6 +4,11 @@
              x:Class="follow.View.EducadoresView.AgregarGrupos"
               BindingContext="{Binding Main, Source={StaticResource Locator }}"
              Title="Grupos" >
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="Plus.png" Text="AgregarMateria" Priority="0" Clicked="TapPlus_Tapped" />
+
+    </ContentPage.ToolbarItems>
 
     <AbsoluteLayout>
         <!-- Normal Page Content -->
@@ -19,9 +24,10 @@
             
             <StackLayout>
                 <Label x:Name="materiatitle"
+                       FontSize="20"             
+                       Margin="10" 
                        
-             
-                 Margin="10,50"    ></Label>
+                       ></Label>
             </StackLayout>
 
 
@@ -47,10 +53,7 @@
                 VerticalOptions="EndAndExpand"
                 Margin="10">
 
-                <Image Source="Plus.png"
-                       x:Name="Plus"></Image>
-                <Label Text="Agregar Grupos"
-                       Margin="10"></Label>
+
             </StackLayout>
         </StackLayout>
         <ContentView x:Name="overlay"

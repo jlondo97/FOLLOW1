@@ -4,6 +4,12 @@
              x:Class="follow.View.EducadoresView.MateriasProfesPage"
               BindingContext="{Binding Main, Source={StaticResource Locator }}"
              Title="Materia " >
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="Plus.png" Text="AgregarMateria" Priority="0" Clicked="TapPlus_Tapped" />
+       
+    </ContentPage.ToolbarItems>
+    
     <AbsoluteLayout>
         <!-- Normal Page Content -->
         <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
@@ -37,16 +43,7 @@
 
          
 
-            <StackLayout
-                HorizontalOptions="EndAndExpand"
-                VerticalOptions="EndAndExpand"
-                Margin="10">
-
-                <Image Source="Plus.png"
-                       x:Name="Plus"></Image>
-                <Label Text="Agregar Materia"
-                       Margin="10"></Label>
-            </StackLayout>
+            
         </StackLayout>
         <ContentView x:Name="overlay"
                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"

@@ -29,9 +29,7 @@ namespace follow.View.TutoresView
             ListaHijos.ItemsSource = AccesoDatosTutor.ObtenerHijo(Usuario);
             
             
-            var TapPlus = new TapGestureRecognizer();
-            TapPlus.Tapped += TapPlus_Tapped;
-            Plus.GestureRecognizers.Add(TapPlus);       
+              
         }
 
         

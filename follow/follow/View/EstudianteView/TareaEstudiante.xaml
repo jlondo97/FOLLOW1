@@ -30,7 +30,7 @@
 
             <StackLayout>
                 <ScrollView VerticalOptions="FillAndExpand">
-                    <ListView x:Name="ListaTareas"  ItemsSource="{Binding}">
+                    <ListView x:Name="ListaTareas" ItemSelected="ListaTareas_ItemSelected" ItemsSource="{Binding}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextCell Text="{Binding Nombre}" />

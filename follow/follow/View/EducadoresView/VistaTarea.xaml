@@ -5,45 +5,63 @@
              Title="Tarea">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout>
+            <StackLayout>   
                 <Image
                 Source="logo.png"
                 VerticalOptions="Center" 
                 HeightRequest="50">
                 </Image>
             </StackLayout>
-            
-            <StackLayout VerticalOptions="CenterAndExpand">
 
-                <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+            <StackLayout VerticalOptions="StartAndExpand">
+                
+                <Label  FontSize="25" x:Name="info" Text="" />
 
-                    <Label  Grid.Row="0" Grid.Column="0" Margin="10,0,40,0" Text="Nombre Tarea : "></Label>
-                    <Label  Grid.Row="0" Grid.Column="1" Margin="10,0,40,0" x:Name="NombreTarea"></Label>
+                <Label  FontSize="20" x:Name="msg1" Text="Fecha De Inicio: " />
+                <StackLayout>
+                    <ScrollView VerticalOptions="FillAndExpand">
+                        <ListView x:Name="FechaInicio" HeightRequest="80"  SeparatorColor="green" AnchorY="10" ItemsSource="{Binding}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding FechaInicio}" />
 
-                <Label Text="Fecha Inicio :" Grid.Row="1" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
-                <Label Grid.Row="1" Grid.Column="1" Margin="0,0,40,0" x:Name="FechaInicio"></Label>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ScrollView>
+                </StackLayout>
 
-                <Label Text="fecha final :" Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
-                <Label Grid.Row="2" Grid.Column="1" Margin="0,0,40,0"  x:Name="FechaFinal"></Label>
+                <Label  FontSize="20" x:Name="msg2" Text="Fecha De Entrega: " />
+                <StackLayout>
+                    <ScrollView VerticalOptions="FillAndExpand">
+                        <ListView x:Name="FechaEntrega" HeightRequest="80"  SeparatorColor="green" AnchorY="10" ItemsSource="{Binding}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding FechaFin}" />
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ScrollView>
+                </StackLayout>
+
+                <Label  FontSize="20" x:Name="msg3" Text="Descripcion: " />
+                <StackLayout>
+                    <ScrollView VerticalOptions="FillAndExpand">
+                        <ListView x:Name="Descripcion" HeightRequest="80"  SeparatorColor="green" AnchorY="10" ItemsSource="{Binding}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Descripcion}" />
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ScrollView>
+                </StackLayout>
 
 
-            </Grid>
-            <StackLayout>
-                <Label Text="Descripcion de la tarea : "  VerticalOptions="CenterAndExpand" Margin="40,0,0,0" />
-                <Editor HeightRequest="100"  BackgroundColor="#d5f5e3" Margin="40,10" x:Name="DescripcionTarea" ></Editor>
 
             </StackLayout>
-            </StackLayout>
-
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

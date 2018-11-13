@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="follow.View.TutoresView.Grupos"
+             Title="Grupos">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All">
+                <!-- Normal Page Content -->
+                <Image
+                Source="logo.png"
+                VerticalOptions="Center" 
+                HeightRequest="50"
+></Image>
+            </StackLayout>
+            <StackLayout>
+                    <Label x:Name="Title"
+                       FontSize="20"             
+                       Margin="10" 
+                       
+                       ></Label>
+                </StackLayout>
+
+                <StackLayout>
+                    <ScrollView VerticalOptions="FillAndExpand">
+                        <ListView x:Name="ListaGrupos"  SeparatorColor="green" ItemSelected="ListaGrupos_ItemSelected"  AnchorY="10" ItemsSource="{Binding}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Nombre}" />
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ScrollView>
+                </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

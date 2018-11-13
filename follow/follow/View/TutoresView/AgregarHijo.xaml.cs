@@ -94,11 +94,15 @@ namespace follow.View.TutoresView
 
         private void ListaHijos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
             if (e.SelectedItem == null) { return; }
 
-           contact data = e.SelectedItem as contact;
-            Application.Current.MainPage.Navigation.PushAsync(new ListaTareasTutorPage());
+
+            var hijo = e.SelectedItem as Hijos;
+
+            user = hijo.Nombre;
+
+
+            Application.Current.MainPage.Navigation.PushAsync(new Grupos(user));
 
         }
     }

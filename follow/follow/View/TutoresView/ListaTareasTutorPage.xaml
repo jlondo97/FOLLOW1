@@ -1,21 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="follow.View.TutoresView.ListaTareasTutorPage">
+             x:Class="follow.View.TutoresView.ListaTareasTutorPage"
+             Title="Tareas">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout VerticalOptions="StartAndExpand">
+            <StackLayout>
                 <Image
-                    Source="Logo.png"
-                    VerticalOptions="StartAndExpand"
-                    HorizontalOptions="StartAndExpand">
-                    
+                Source="logo.png"
+                VerticalOptions="Center" 
+                HeightRequest="50">
                 </Image>
-                    
             </StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout>
+                <Label x:Name="grupotitle" 
+                       FontSize="20"
+                   Margin="10"    ></Label>
+            </StackLayout>
+
+            <Label Text="Codigo materia: " />
+
+            <StackLayout>
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <ListView x:Name="CodigoEnlace" HeightRequest="40"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding CodEnlace}" />
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+
+            <Label Text="Tareas asignadas: " />
+
+            <ScrollView VerticalOptions="FillAndExpand">
+                <ListView x:Name="ListaTareas" SeparatorColor="green" ItemSelected="ListaTareas_ItemSelected"  AnchorY="10" ItemsSource="{Binding}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Nombre}" />
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+
+
+            <StackLayout 
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="EndAndExpand"
+                Margin="20">
+
+
+
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

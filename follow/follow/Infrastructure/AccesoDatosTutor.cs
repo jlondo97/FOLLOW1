@@ -13,7 +13,7 @@ namespace follow.Infrastructure
         {
             List<Hijos> listaHijos = new List<Hijos>();
             //  string sql = "select Users.Nombre from users where Identificacion = '456789'and Nombre = 'Jose'";
-            string sql = "select users.Nombre from Hijo inner join users on users.Correo = Hijo.Correo where hijo.Tutor='" + usuario + "'";
+            string sql = "select users.Correo from Hijo inner join users on users.Correo = Hijo.Correo where hijo.Tutor='" + usuario + "'";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {

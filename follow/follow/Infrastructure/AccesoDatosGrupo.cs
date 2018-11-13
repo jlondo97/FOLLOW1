@@ -149,6 +149,41 @@ namespace follow.Infrastructure
 
         }
 
+        public static List<Grupo> ObtenerEstudiantes(string codigo)
+        {
+            List<Grupo> listaGrupo = new List<Grupo>();
+            string sql = "select Estudiante from grupo where CodEnlace='" + codigo + "' and Estudiante <>";
+
+            using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
+            {
+                con.Open();
+
+                using (SqlCommand comando = new SqlCommand(sql, con))
+                {
+                    using (SqlDataReader reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Grupo grupo = new Grupo()
+                            {
+                               Estudiante = reader.GetString(0),
+
+                            };
+
+                            listaGrupo.Add(grupo);
+                        }
+                    }
+                }
+
+                con.Close();
+
+                return listaGrupo;
+            }
+
+
+
+        }
+
 
     }
 }

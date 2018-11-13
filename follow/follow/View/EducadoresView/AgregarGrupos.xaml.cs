@@ -30,7 +30,7 @@ namespace follow.View.EducadoresView
             string codigo = codigo_Grupo();
                      
             ListaGrupos.ItemsSource = AccesoDatosGrupo.ObtenerGrupos(Materiatomada);
-            CodigoEnlace.ItemsSource = AccesoDatosGrupo.ObtenerCodigo(Materiatomada);
+            
 
 
 

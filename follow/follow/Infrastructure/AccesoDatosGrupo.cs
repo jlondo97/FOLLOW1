@@ -75,7 +75,7 @@ namespace follow.Infrastructure
         public static List<Grupo> ObtenerCodigo(string nombre)
         {
             List<Grupo> listacodigo = new List<Grupo>();
-            string sql = "select Codigo from grupo where Nombre ='" + nombre + "'";
+            string sql = "select CodEnlace from grupo where Nombre ='" + nombre + "'";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {
@@ -89,7 +89,7 @@ namespace follow.Infrastructure
                         {
                             Grupo grupo = new Grupo()
                             {
-                                Nombre = reader.GetString(0),
+                                CodEnlace= reader.GetString(0),
 
                             };
 
@@ -149,10 +149,10 @@ namespace follow.Infrastructure
 
         }
 
-        public static List<Grupo> ObtenerEstudiantes(string codigo)
+        public static List<Grupo> ObtenerEstudiantes(string grup)
         {
             List<Grupo> listaGrupo = new List<Grupo>();
-            string sql = "select Estudiante from grupo where CodEnlace='" + codigo + "' and Estudiante <>";
+            string sql = "select Estudiante from grupo where Nombre='" + grup + "' and Estudiante <>''";
 
             using (SqlConnection con = new SqlConnection(Configuracion.CadenaConexion))
             {

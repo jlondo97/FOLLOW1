@@ -21,7 +21,20 @@
 
             <StackLayout>
 
-    
+                <Label Text="Estudiantes del curso: " />
+
+                <StackLayout>
+                    <ScrollView VerticalOptions="FillAndExpand">
+                        <ListView x:Name="ListEstudiantes" HeightRequest="40"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Estudiante}" />
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ScrollView>
+                </StackLayout>
 
 
             </StackLayout>

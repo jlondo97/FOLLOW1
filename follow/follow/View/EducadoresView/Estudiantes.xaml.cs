@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using follow.View.EducadoresView;
+using follow.Infrastructure;
 
 
 
@@ -15,12 +16,13 @@ namespace follow.View.EducadoresView
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Estudiantes : ContentPage
     {
-        public Estudiantes()
+        string grup;
+        public Estudiantes(string Grupo)
         {
-            InitializeComponent();    
+            InitializeComponent();
+            grup = Grupo;
 
-            
-            
+            ListEstudiantes.ItemsSource = AccesoDatosGrupo.ObtenerEstudiantes(grup);
 
         }
 

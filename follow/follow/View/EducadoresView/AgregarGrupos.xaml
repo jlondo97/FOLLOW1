@@ -29,23 +29,8 @@
                        
                        ></Label>
             </StackLayout>
-
-<Label Text="Codigo materia: " />
             
-            <StackLayout>
-                <ScrollView VerticalOptions="FillAndExpand">
-                    <ListView x:Name="CodigoEnlace"  SeparatorColor="green"  AnchorY="10" ItemsSource="{Binding}" >
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextCell Text="{Binding CodEnlace}" />
-
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </ScrollView>
-            </StackLayout>
-
-            <StackLayout>
+         <StackLayout>
                 <ScrollView VerticalOptions="FillAndExpand">
                     <ListView x:Name="ListaGrupos"  SeparatorColor="green" ItemSelected="ListaGrupos_ItemSelected"  AnchorY="10" ItemsSource="{Binding}" >
                         <ListView.ItemTemplate>
